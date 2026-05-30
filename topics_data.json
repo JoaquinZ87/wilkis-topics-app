@@ -1,0 +1,2233 @@
+{
+  "model": "NMF",
+  "k": 25,
+  "n_docs_total": 4246,
+  "subset": "Zelizer internacional (excl. US) — abstracts traducidos al inglés",
+  "topics": [
+    {
+      "id": 0,
+      "label": "T00",
+      "top_words": [
+        {
+          "word": "economic",
+          "score": 4.850371096316788
+        },
+        {
+          "word": "sociology",
+          "score": 4.397738161188322
+        },
+        {
+          "word": "embeddedness",
+          "score": 1.0243616188423388
+        },
+        {
+          "word": "new",
+          "score": 0.9999111340493331
+        },
+        {
+          "word": "geography",
+          "score": 0.6256426181423701
+        },
+        {
+          "word": "action",
+          "score": 0.42796234249695375
+        },
+        {
+          "word": "models",
+          "score": 0.4058656006285525
+        },
+        {
+          "word": "polanyi",
+          "score": 0.39319419348545187
+        },
+        {
+          "word": "sociologists",
+          "score": 0.3586861377398689
+        },
+        {
+          "word": "theory",
+          "score": 0.33185942651332695
+        },
+        {
+          "word": "sociological",
+          "score": 0.32218555308708074
+        },
+        {
+          "word": "project",
+          "score": 0.300548524313896
+        },
+        {
+          "word": "science",
+          "score": 0.29838297186913654
+        },
+        {
+          "word": "crisis",
+          "score": 0.26414311380102173
+        },
+        {
+          "word": "processes",
+          "score": 0.26142959657578063
+        }
+      ],
+      "n_docs_dominant": 52,
+      "top_countries": [
+        {
+          "country": "Rusia",
+          "n_docs": 7
+        },
+        {
+          "country": "Francia",
+          "n_docs": 6
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 5
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 4
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 2
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "label": "T01",
+      "top_words": [
+        {
+          "word": "children",
+          "score": 2.6189480082909284
+        },
+        {
+          "word": "parents",
+          "score": 0.33468917068352694
+        },
+        {
+          "word": "rights",
+          "score": 0.266503559215308
+        },
+        {
+          "word": "adults",
+          "score": 0.174898789648865
+        },
+        {
+          "word": "young",
+          "score": 0.1711276945279363
+        },
+        {
+          "word": "adult",
+          "score": 0.1447311336479309
+        },
+        {
+          "word": "lives",
+          "score": 0.12955841888238714
+        },
+        {
+          "word": "agency",
+          "score": 0.11453429492281746
+        },
+        {
+          "word": "parenting",
+          "score": 0.09771099625616872
+        },
+        {
+          "word": "parental",
+          "score": 0.09596811059235669
+        },
+        {
+          "word": "childhood",
+          "score": 0.08927820665736415
+        },
+        {
+          "word": "culture",
+          "score": 0.08299493612126348
+        },
+        {
+          "word": "experiences",
+          "score": 0.08189404017430488
+        },
+        {
+          "word": "families",
+          "score": 0.07971521477303409
+        },
+        {
+          "word": "time",
+          "score": 0.07660167331109058
+        }
+      ],
+      "n_docs_dominant": 273,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 67
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 29
+        },
+        {
+          "country": "Australia",
+          "n_docs": 26
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 21
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 11
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "T02",
+      "top_words": [
+        {
+          "word": "money",
+          "score": 2.324781039120899
+        },
+        {
+          "word": "monetary",
+          "score": 0.3783574408292915
+        },
+        {
+          "word": "meaning",
+          "score": 0.17308911788598969
+        },
+        {
+          "word": "currency",
+          "score": 0.16915735477756283
+        },
+        {
+          "word": "management",
+          "score": 0.15107206177724078
+        },
+        {
+          "word": "cash",
+          "score": 0.1355809874808749
+        },
+        {
+          "word": "payment",
+          "score": 0.1212114970078795
+        },
+        {
+          "word": "currencies",
+          "score": 0.10216849783277517
+        },
+        {
+          "word": "digital",
+          "score": 0.10185867298848247
+        },
+        {
+          "word": "meanings",
+          "score": 0.10129775326607374
+        },
+        {
+          "word": "couples",
+          "score": 0.09320962393425312
+        },
+        {
+          "word": "nature",
+          "score": 0.08966284671405596
+        },
+        {
+          "word": "exchange",
+          "score": 0.08640142215503487
+        },
+        {
+          "word": "simmel",
+          "score": 0.08637589233877087
+        },
+        {
+          "word": "philosophy",
+          "score": 0.08052004159728592
+        }
+      ],
+      "n_docs_dominant": 334,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 70
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 28
+        },
+        {
+          "country": "Australia",
+          "n_docs": 17
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 17
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 16
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "T03",
+      "top_words": [
+        {
+          "word": "insurance",
+          "score": 2.677159876681765
+        },
+        {
+          "word": "life",
+          "score": 0.9673702957373242
+        },
+        {
+          "word": "actuarial",
+          "score": 0.3024685944820534
+        },
+        {
+          "word": "risk",
+          "score": 0.29817322384779144
+        },
+        {
+          "word": "business",
+          "score": 0.23473275064232696
+        },
+        {
+          "word": "companies",
+          "score": 0.22959195938685867
+        },
+        {
+          "word": "industry",
+          "score": 0.18930189646735052
+        },
+        {
+          "word": "marketing",
+          "score": 0.16607906339273026
+        },
+        {
+          "word": "demand",
+          "score": 0.14387551200088125
+        },
+        {
+          "word": "solidarity",
+          "score": 0.13421071014251942
+        },
+        {
+          "word": "insurers",
+          "score": 0.13051372377374015
+        },
+        {
+          "word": "health",
+          "score": 0.12445819767558582
+        },
+        {
+          "word": "private",
+          "score": 0.11617016058098557
+        },
+        {
+          "word": "factors",
+          "score": 0.11050882605274587
+        },
+        {
+          "word": "products",
+          "score": 0.10092234237233569
+        }
+      ],
+      "n_docs_dominant": 127,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 22
+        },
+        {
+          "country": "Australia",
+          "n_docs": 14
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 12
+        },
+        {
+          "country": "Países Bajos",
+          "n_docs": 7
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "T04",
+      "top_words": [
+        {
+          "word": "political",
+          "score": 1.7828140814461801
+        },
+        {
+          "word": "science",
+          "score": 1.4435541465886261
+        },
+        {
+          "word": "philosophy",
+          "score": 0.5673017060382946
+        },
+        {
+          "word": "law",
+          "score": 0.4997468849525107
+        },
+        {
+          "word": "politics",
+          "score": 0.40987059490914945
+        },
+        {
+          "word": "art",
+          "score": 0.27488018973349243
+        },
+        {
+          "word": "international",
+          "score": 0.18266501751748224
+        },
+        {
+          "word": "history",
+          "score": 0.1641737840183359
+        },
+        {
+          "word": "audience",
+          "score": 0.12794562235840767
+        },
+        {
+          "word": "rights",
+          "score": 0.12472417712740576
+        },
+        {
+          "word": "geography",
+          "score": 0.10629876073198873
+        },
+        {
+          "word": "sociology",
+          "score": 0.10527635198547396
+        },
+        {
+          "word": "programa",
+          "score": 0.09791936621063442
+        },
+        {
+          "word": "democracy",
+          "score": 0.07718984165767885
+        },
+        {
+          "word": "state",
+          "score": 0.07609087926655089
+        }
+      ],
+      "n_docs_dominant": 243,
+      "top_countries": [
+        {
+          "country": "Francia",
+          "n_docs": 42
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 33
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 25
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 17
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 12
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "T05",
+      "top_words": [
+        {
+          "word": "economic",
+          "score": 1.1923305832970428
+        },
+        {
+          "word": "field",
+          "score": 0.5935421257077319
+        },
+        {
+          "word": "professional",
+          "score": 0.5878697156231606
+        },
+        {
+          "word": "sociological",
+          "score": 0.5845303746419485
+        },
+        {
+          "word": "community",
+          "score": 0.5486655932829752
+        },
+        {
+          "word": "sociology",
+          "score": 0.4259359009026593
+        },
+        {
+          "word": "priority",
+          "score": 0.34428124911610014
+        },
+        {
+          "word": "founders",
+          "score": 0.33836177331547757
+        },
+        {
+          "word": "specialized",
+          "score": 0.3353588227993687
+        },
+        {
+          "word": "colleagues",
+          "score": 0.33478513347481503
+        },
+        {
+          "word": "university",
+          "score": 0.33461197084147654
+        },
+        {
+          "word": "electronic",
+          "score": 0.3303659742678682
+        },
+        {
+          "word": "topics",
+          "score": 0.32837697272463023
+        },
+        {
+          "word": "inform",
+          "score": 0.3155539531864424
+        },
+        {
+          "word": "academic",
+          "score": 0.31246837533025834
+        }
+      ],
+      "n_docs_dominant": 53,
+      "top_countries": [
+        {
+          "country": "Rusia",
+          "n_docs": 20
+        },
+        {
+          "country": "Francia",
+          "n_docs": 5
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 4
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 2
+        },
+        {
+          "country": "Suiza",
+          "n_docs": 2
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "label": "T06",
+      "top_words": [
+        {
+          "word": "market",
+          "score": 2.3372536971206364
+        },
+        {
+          "word": "markets",
+          "score": 1.5098350961251943
+        },
+        {
+          "word": "exchange",
+          "score": 0.2569362206429951
+        },
+        {
+          "word": "marketization",
+          "score": 0.2430850449938318
+        },
+        {
+          "word": "goods",
+          "score": 0.24269130697718316
+        },
+        {
+          "word": "competition",
+          "score": 0.20519706339755936
+        },
+        {
+          "word": "price",
+          "score": 0.17509859849133444
+        },
+        {
+          "word": "business",
+          "score": 0.17333508485940183
+        },
+        {
+          "word": "actors",
+          "score": 0.16867156701847455
+        },
+        {
+          "word": "commodification",
+          "score": 0.1529486787164241
+        },
+        {
+          "word": "process",
+          "score": 0.1506485174614134
+        },
+        {
+          "word": "transactions",
+          "score": 0.14517204528698793
+        },
+        {
+          "word": "cultural",
+          "score": 0.1430576686798508
+        },
+        {
+          "word": "derivatives",
+          "score": 0.13099678216938584
+        },
+        {
+          "word": "products",
+          "score": 0.13049698016675879
+        }
+      ],
+      "n_docs_dominant": 201,
+      "top_countries": [
+        {
+          "country": "Francia",
+          "n_docs": 30
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 29
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 25
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 10
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 10
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "T07",
+      "top_words": [
+        {
+          "word": "financial",
+          "score": 2.5902433858868847
+        },
+        {
+          "word": "finance",
+          "score": 0.9308015636592313
+        },
+        {
+          "word": "services",
+          "score": 0.33232646519533515
+        },
+        {
+          "word": "financialization",
+          "score": 0.29402939707729325
+        },
+        {
+          "word": "banking",
+          "score": 0.2336800212643839
+        },
+        {
+          "word": "inclusion",
+          "score": 0.2014922160703413
+        },
+        {
+          "word": "derivatives",
+          "score": 0.19180611611484988
+        },
+        {
+          "word": "management",
+          "score": 0.18643957577281794
+        },
+        {
+          "word": "literacy",
+          "score": 0.18050544546630112
+        },
+        {
+          "word": "business",
+          "score": 0.17920548761326652
+        },
+        {
+          "word": "practices",
+          "score": 0.16765991685151618
+        },
+        {
+          "word": "everyday",
+          "score": 0.15860855593772388
+        },
+        {
+          "word": "microfinance",
+          "score": 0.14436101530754913
+        },
+        {
+          "word": "capital",
+          "score": 0.14357943585745842
+        },
+        {
+          "word": "global",
+          "score": 0.14045118166100917
+        }
+      ],
+      "n_docs_dominant": 162,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 55
+        },
+        {
+          "country": "Francia",
+          "n_docs": 18
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 11
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 8
+        },
+        {
+          "country": "Australia",
+          "n_docs": 6
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "label": "T08",
+      "top_words": [
+        {
+          "word": "work",
+          "score": 3.1611701213384795
+        },
+        {
+          "word": "physics",
+          "score": 0.6397661155139819
+        },
+        {
+          "word": "labour",
+          "score": 0.517535015421801
+        },
+        {
+          "word": "relational",
+          "score": 0.4753585612969973
+        },
+        {
+          "word": "undeclared",
+          "score": 0.40692996539470083
+        },
+        {
+          "word": "workers",
+          "score": 0.2727825442783316
+        },
+        {
+          "word": "engineering",
+          "score": 0.26859199907731185
+        },
+        {
+          "word": "paid",
+          "score": 0.26704743417513005
+        },
+        {
+          "word": "labor",
+          "score": 0.2410417492030837
+        },
+        {
+          "word": "creative",
+          "score": 0.2208236364037722
+        },
+        {
+          "word": "unpaid",
+          "score": 0.21811492643044547
+        },
+        {
+          "word": "working",
+          "score": 0.17422013018129415
+        },
+        {
+          "word": "domestic",
+          "score": 0.16762986667131105
+        },
+        {
+          "word": "relations",
+          "score": 0.16574830650820951
+        },
+        {
+          "word": "body",
+          "score": 0.14887244430309157
+        }
+      ],
+      "n_docs_dominant": 133,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 34
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 9
+        },
+        {
+          "country": "Francia",
+          "n_docs": 8
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 7
+        },
+        {
+          "country": "Australia",
+          "n_docs": 6
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "label": "T09",
+      "top_words": [
+        {
+          "word": "family",
+          "score": 2.245172185135468
+        },
+        {
+          "word": "families",
+          "score": 0.7308694469178743
+        },
+        {
+          "word": "parents",
+          "score": 0.5879713386120153
+        },
+        {
+          "word": "migration",
+          "score": 0.4672575851079308
+        },
+        {
+          "word": "life",
+          "score": 0.38191523369231967
+        },
+        {
+          "word": "remittances",
+          "score": 0.31611301330380137
+        },
+        {
+          "word": "transnational",
+          "score": 0.31066038209689684
+        },
+        {
+          "word": "context",
+          "score": 0.29407014995670133
+        },
+        {
+          "word": "kinship",
+          "score": 0.28512225105054334
+        },
+        {
+          "word": "time",
+          "score": 0.24863814003746024
+        },
+        {
+          "word": "members",
+          "score": 0.21417294221342936
+        },
+        {
+          "word": "relationships",
+          "score": 0.20972846113629867
+        },
+        {
+          "word": "remittance",
+          "score": 0.19789892912584492
+        },
+        {
+          "word": "parenting",
+          "score": 0.1845063255172096
+        },
+        {
+          "word": "adoption",
+          "score": 0.17610219762138773
+        }
+      ],
+      "n_docs_dominant": 138,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 30
+        },
+        {
+          "country": "Francia",
+          "n_docs": 12
+        },
+        {
+          "country": "Australia",
+          "n_docs": 8
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 7
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 6
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "label": "T10",
+      "top_words": [
+        {
+          "word": "economics",
+          "score": 2.649628383307497
+        },
+        {
+          "word": "business",
+          "score": 0.5109971020312534
+        },
+        {
+          "word": "neoclassical",
+          "score": 0.4689793118663903
+        },
+        {
+          "word": "positive",
+          "score": 0.32855019462609664
+        },
+        {
+          "word": "labour",
+          "score": 0.3260189689966469
+        },
+        {
+          "word": "university",
+          "score": 0.2601494029305388
+        },
+        {
+          "word": "law",
+          "score": 0.1775234710639231
+        },
+        {
+          "word": "sciences",
+          "score": 0.16918972126788318
+        },
+        {
+          "word": "monetary",
+          "score": 0.15653091165603644
+        },
+        {
+          "word": "economic",
+          "score": 0.15300207929210272
+        },
+        {
+          "word": "state",
+          "score": 0.14951684664514217
+        },
+        {
+          "word": "demographic",
+          "score": 0.14433031624247428
+        },
+        {
+          "word": "project",
+          "score": 0.1370234653913265
+        },
+        {
+          "word": "imperialism",
+          "score": 0.1338345958769844
+        },
+        {
+          "word": "finance",
+          "score": 0.13372701611508486
+        }
+      ],
+      "n_docs_dominant": 126,
+      "top_countries": [
+        {
+          "country": "Rusia",
+          "n_docs": 21
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 17
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 15
+        },
+        {
+          "country": "Francia",
+          "n_docs": 11
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 6
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "label": "T11",
+      "top_words": [
+        {
+          "word": "economy",
+          "score": 2.8974238520390982
+        },
+        {
+          "word": "informal",
+          "score": 0.7903334984023607
+        },
+        {
+          "word": "sharing",
+          "score": 0.6862214170499951
+        },
+        {
+          "word": "digital",
+          "score": 0.5204454327502344
+        },
+        {
+          "word": "capitalism",
+          "score": 0.5011785351252954
+        },
+        {
+          "word": "collaborative",
+          "score": 0.3969755899583564
+        },
+        {
+          "word": "tourism",
+          "score": 0.31964430145222306
+        },
+        {
+          "word": "economic",
+          "score": 0.25958374737856793
+        },
+        {
+          "word": "economies",
+          "score": 0.25298154554142155
+        },
+        {
+          "word": "politics",
+          "score": 0.2167980673471496
+        },
+        {
+          "word": "political",
+          "score": 0.2145724968628628
+        },
+        {
+          "word": "formal",
+          "score": 0.19735995898267727
+        },
+        {
+          "word": "gift",
+          "score": 0.18481799188086823
+        },
+        {
+          "word": "culture",
+          "score": 0.18137201456496385
+        },
+        {
+          "word": "entrepreneurship",
+          "score": 0.18020042850388876
+        }
+      ],
+      "n_docs_dominant": 98,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 38
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 6
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 6
+        },
+        {
+          "country": "Australia",
+          "n_docs": 6
+        },
+        {
+          "country": "Rusia",
+          "n_docs": 6
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "label": "T12",
+      "top_words": [
+        {
+          "word": "consumption",
+          "score": 2.448703193404085
+        },
+        {
+          "word": "consumer",
+          "score": 0.6945408102853049
+        },
+        {
+          "word": "sociology",
+          "score": 0.47156130805348895
+        },
+        {
+          "word": "culture",
+          "score": 0.30693095394330877
+        },
+        {
+          "word": "consumers",
+          "score": 0.2572344332321491
+        },
+        {
+          "word": "media",
+          "score": 0.21148856242309702
+        },
+        {
+          "word": "cultural",
+          "score": 0.2055430231080279
+        },
+        {
+          "word": "products",
+          "score": 0.16960284672338535
+        },
+        {
+          "word": "class",
+          "score": 0.1607893655403814
+        },
+        {
+          "word": "marketing",
+          "score": 0.1565229178699307
+        },
+        {
+          "word": "everyday",
+          "score": 0.14235601931799455
+        },
+        {
+          "word": "clothing",
+          "score": 0.14008392179816076
+        },
+        {
+          "word": "practices",
+          "score": 0.1357892264092767
+        },
+        {
+          "word": "food",
+          "score": 0.13557906123378816
+        },
+        {
+          "word": "advertising",
+          "score": 0.13364270380090776
+        }
+      ],
+      "n_docs_dominant": 113,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 23
+        },
+        {
+          "country": "Francia",
+          "n_docs": 9
+        },
+        {
+          "country": "Australia",
+          "n_docs": 6
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 5
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 5
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "label": "T13",
+      "top_words": [
+        {
+          "word": "value",
+          "score": 2.7562402452490744
+        },
+        {
+          "word": "mathematics",
+          "score": 0.8284007972007993
+        },
+        {
+          "word": "valuation",
+          "score": 0.4301495782349754
+        },
+        {
+          "word": "values",
+          "score": 0.3744490674689854
+        },
+        {
+          "word": "art",
+          "score": 0.31708693782172825
+        },
+        {
+          "word": "currency",
+          "score": 0.2683464456165033
+        },
+        {
+          "word": "price",
+          "score": 0.23881561713988822
+        },
+        {
+          "word": "power",
+          "score": 0.2234045632767422
+        },
+        {
+          "word": "prices",
+          "score": 0.1970438414984785
+        },
+        {
+          "word": "exchange",
+          "score": 0.15380827957594523
+        },
+        {
+          "word": "objects",
+          "score": 0.13131241808697913
+        },
+        {
+          "word": "creation",
+          "score": 0.1253385635734443
+        },
+        {
+          "word": "fertility",
+          "score": 0.1231056177974346
+        },
+        {
+          "word": "people",
+          "score": 0.11045027322378352
+        },
+        {
+          "word": "human",
+          "score": 0.10970092309373722
+        }
+      ],
+      "n_docs_dominant": 101,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 19
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 12
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 12
+        },
+        {
+          "country": "Francia",
+          "n_docs": 8
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 8
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "label": "T14",
+      "top_words": [
+        {
+          "word": "women",
+          "score": 1.8210912612051144
+        },
+        {
+          "word": "gender",
+          "score": 0.9042081834009509
+        },
+        {
+          "word": "couples",
+          "score": 0.5066125552376126
+        },
+        {
+          "word": "income",
+          "score": 0.48685880868096315
+        },
+        {
+          "word": "household",
+          "score": 0.45945200198101366
+        },
+        {
+          "word": "class",
+          "score": 0.32386565994461874
+        },
+        {
+          "word": "power",
+          "score": 0.3223603696620067
+        },
+        {
+          "word": "management",
+          "score": 0.26551881215147705
+        },
+        {
+          "word": "inequality",
+          "score": 0.2654574728432467
+        },
+        {
+          "word": "marriage",
+          "score": 0.21737040393269688
+        },
+        {
+          "word": "gendered",
+          "score": 0.19765547125062327
+        },
+        {
+          "word": "households",
+          "score": 0.19252321854910345
+        },
+        {
+          "word": "control",
+          "score": 0.16111011604830472
+        },
+        {
+          "word": "labor",
+          "score": 0.156779578146481
+        },
+        {
+          "word": "wealth",
+          "score": 0.15012989048704609
+        }
+      ],
+      "n_docs_dominant": 178,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 32
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 15
+        },
+        {
+          "country": "Australia",
+          "n_docs": 12
+        },
+        {
+          "country": "Israel",
+          "n_docs": 11
+        },
+        {
+          "country": "España",
+          "n_docs": 8
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "label": "T15",
+      "top_words": [
+        {
+          "word": "child",
+          "score": 2.3830732169588367
+        },
+        {
+          "word": "rights",
+          "score": 0.4103811345294143
+        },
+        {
+          "word": "labor",
+          "score": 0.2993819913176425
+        },
+        {
+          "word": "labour",
+          "score": 0.2600972814156747
+        },
+        {
+          "word": "convention",
+          "score": 0.24325028898001486
+        },
+        {
+          "word": "mothers",
+          "score": 0.23063413547419817
+        },
+        {
+          "word": "abuse",
+          "score": 0.2158438972265478
+        },
+        {
+          "word": "protection",
+          "score": 0.19064229437738797
+        },
+        {
+          "word": "welfare",
+          "score": 0.15430664266771157
+        },
+        {
+          "word": "parents",
+          "score": 0.12474300943959538
+        },
+        {
+          "word": "fathers",
+          "score": 0.10620466308546403
+        },
+        {
+          "word": "caring",
+          "score": 0.09598599634085532
+        },
+        {
+          "word": "adoption",
+          "score": 0.09347477881599697
+        },
+        {
+          "word": "poverty",
+          "score": 0.09044629601292906
+        },
+        {
+          "word": "international",
+          "score": 0.0872355342397174
+        }
+      ],
+      "n_docs_dominant": 136,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 30
+        },
+        {
+          "country": "Australia",
+          "n_docs": 17
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 12
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 9
+        },
+        {
+          "country": "Argentina",
+          "n_docs": 5
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "label": "T16",
+      "top_words": [
+        {
+          "word": "care",
+          "score": 2.2306447217567387
+        },
+        {
+          "word": "health",
+          "score": 0.5355560195546638
+        },
+        {
+          "word": "foster",
+          "score": 0.35550524647332243
+        },
+        {
+          "word": "elderly",
+          "score": 0.24214657138489523
+        },
+        {
+          "word": "commodification",
+          "score": 0.20715562005667343
+        },
+        {
+          "word": "caring",
+          "score": 0.18296124331829042
+        },
+        {
+          "word": "caregivers",
+          "score": 0.16892796446891656
+        },
+        {
+          "word": "home",
+          "score": 0.15916840527748433
+        },
+        {
+          "word": "workers",
+          "score": 0.15299894008077652
+        },
+        {
+          "word": "immigrant",
+          "score": 0.1430362195024379
+        },
+        {
+          "word": "services",
+          "score": 0.1166215192933216
+        },
+        {
+          "word": "people",
+          "score": 0.1067763640813889
+        },
+        {
+          "word": "carers",
+          "score": 0.10469001421893616
+        },
+        {
+          "word": "welfare",
+          "score": 0.099951292502438
+        },
+        {
+          "word": "emotional",
+          "score": 0.09530052928654159
+        }
+      ],
+      "n_docs_dominant": 106,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 22
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 6
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 6
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 5
+        },
+        {
+          "country": "Australia",
+          "n_docs": 5
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "label": "T17",
+      "top_words": [
+        {
+          "word": "psychology",
+          "score": 2.613756772753117
+        },
+        {
+          "word": "developmental",
+          "score": 0.543612333248333
+        },
+        {
+          "word": "parenting",
+          "score": 0.3009334439974927
+        },
+        {
+          "word": "gender",
+          "score": 0.25519106387649654
+        },
+        {
+          "word": "emotional",
+          "score": 0.21248326103092383
+        },
+        {
+          "word": "sexual",
+          "score": 0.19606939843223314
+        },
+        {
+          "word": "parents",
+          "score": 0.1936949546450395
+        },
+        {
+          "word": "criminology",
+          "score": 0.18050037550704
+        },
+        {
+          "word": "history",
+          "score": 0.17997785773824523
+        },
+        {
+          "word": "behavior",
+          "score": 0.17384278901829484
+        },
+        {
+          "word": "art",
+          "score": 0.14727622511611402
+        },
+        {
+          "word": "girl",
+          "score": 0.1416653739828019
+        },
+        {
+          "word": "young",
+          "score": 0.1375289767452753
+        },
+        {
+          "word": "attitudes",
+          "score": 0.13671551331608148
+        },
+        {
+          "word": "cognitive",
+          "score": 0.13616874878980523
+        }
+      ],
+      "n_docs_dominant": 91,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 18
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 6
+        },
+        {
+          "country": "Rusia",
+          "n_docs": 6
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 5
+        },
+        {
+          "country": "Francia",
+          "n_docs": 4
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "label": "T18",
+      "top_words": [
+        {
+          "word": "social",
+          "score": 2.0470253324069545
+        },
+        {
+          "word": "capital",
+          "score": 0.3882086876712924
+        },
+        {
+          "word": "network",
+          "score": 0.2838716054972495
+        },
+        {
+          "word": "networks",
+          "score": 0.26638478216441386
+        },
+        {
+          "word": "relations",
+          "score": 0.2550973357612326
+        },
+        {
+          "word": "theory",
+          "score": 0.23829476280827666
+        },
+        {
+          "word": "cultural",
+          "score": 0.20777921943879166
+        },
+        {
+          "word": "structure",
+          "score": 0.19056391132164527
+        },
+        {
+          "word": "society",
+          "score": 0.18821343964042653
+        },
+        {
+          "word": "media",
+          "score": 0.17900072562292732
+        },
+        {
+          "word": "meaning",
+          "score": 0.16103480412943194
+        },
+        {
+          "word": "philosophy",
+          "score": 0.15896376697737108
+        },
+        {
+          "word": "sociological",
+          "score": 0.15067276854681025
+        },
+        {
+          "word": "relationships",
+          "score": 0.14946916020360962
+        },
+        {
+          "word": "perspective",
+          "score": 0.14772190348444003
+        }
+      ],
+      "n_docs_dominant": 298,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 45
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 31
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 24
+        },
+        {
+          "country": "Francia",
+          "n_docs": 21
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 20
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "label": "T19",
+      "top_words": [
+        {
+          "word": "debt",
+          "score": 1.5311813476959673
+        },
+        {
+          "word": "credit",
+          "score": 1.3203306676280526
+        },
+        {
+          "word": "consumer",
+          "score": 0.208890241732243
+        },
+        {
+          "word": "household",
+          "score": 0.20540708150523584
+        },
+        {
+          "word": "card",
+          "score": 0.19408781235921022
+        },
+        {
+          "word": "financialization",
+          "score": 0.18516929361083456
+        },
+        {
+          "word": "indebtedness",
+          "score": 0.16078356679164799
+        },
+        {
+          "word": "capitalism",
+          "score": 0.1458752773795739
+        },
+        {
+          "word": "cards",
+          "score": 0.14159396840736949
+        },
+        {
+          "word": "households",
+          "score": 0.10237380338578897
+        },
+        {
+          "word": "mortgage",
+          "score": 0.10216882977705992
+        },
+        {
+          "word": "income",
+          "score": 0.09525351619078401
+        },
+        {
+          "word": "crisis",
+          "score": 0.08601785802244948
+        },
+        {
+          "word": "debts",
+          "score": 0.08469417488755684
+        },
+        {
+          "word": "everyday",
+          "score": 0.08262162545128492
+        }
+      ],
+      "n_docs_dominant": 91,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 23
+        },
+        {
+          "country": "Francia",
+          "n_docs": 15
+        },
+        {
+          "country": "Suiza",
+          "n_docs": 5
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 3
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 3
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "label": "T20",
+      "top_words": [
+        {
+          "word": "moral",
+          "score": 1.8734657718263168
+        },
+        {
+          "word": "morality",
+          "score": 0.4094548894653335
+        },
+        {
+          "word": "practices",
+          "score": 0.1377531702142392
+        },
+        {
+          "word": "ethics",
+          "score": 0.12013120664179545
+        },
+        {
+          "word": "concerns",
+          "score": 0.10545605637045508
+        },
+        {
+          "word": "people",
+          "score": 0.1029902752900047
+        },
+        {
+          "word": "trading",
+          "score": 0.0965536099906356
+        },
+        {
+          "word": "economy",
+          "score": 0.09646971860242029
+        },
+        {
+          "word": "responsibility",
+          "score": 0.09051860035303703
+        },
+        {
+          "word": "morally",
+          "score": 0.08971856910413888
+        },
+        {
+          "word": "good",
+          "score": 0.08898166141232337
+        },
+        {
+          "word": "solidarity",
+          "score": 0.0870088440126812
+        },
+        {
+          "word": "values",
+          "score": 0.08314765520673197
+        },
+        {
+          "word": "legitimacy",
+          "score": 0.0825273705589298
+        },
+        {
+          "word": "contested",
+          "score": 0.0800931613845968
+        }
+      ],
+      "n_docs_dominant": 136,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 31
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 15
+        },
+        {
+          "country": "Francia",
+          "n_docs": 11
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 7
+        },
+        {
+          "country": "Suiza",
+          "n_docs": 7
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "label": "T21",
+      "top_words": [
+        {
+          "word": "computer",
+          "score": 1.488236223961477
+        },
+        {
+          "word": "information",
+          "score": 1.1971451254409502
+        },
+        {
+          "word": "science",
+          "score": 0.8971101763644139
+        },
+        {
+          "word": "measure",
+          "score": 0.6741675139290705
+        },
+        {
+          "word": "privacy",
+          "score": 0.612005400237313
+        },
+        {
+          "word": "internet",
+          "score": 0.593094087994275
+        },
+        {
+          "word": "theory",
+          "score": 0.5337389326737408
+        },
+        {
+          "word": "business",
+          "score": 0.30827583048551427
+        },
+        {
+          "word": "web",
+          "score": 0.30395284961941677
+        },
+        {
+          "word": "wide",
+          "score": 0.24809567241475763
+        },
+        {
+          "word": "mathematics",
+          "score": 0.2387642599342311
+        },
+        {
+          "word": "retrieval",
+          "score": 0.23138231437386667
+        },
+        {
+          "word": "rights",
+          "score": 0.16475527878981666
+        },
+        {
+          "word": "world",
+          "score": 0.16464480985139612
+        },
+        {
+          "word": "state",
+          "score": 0.15083363257733495
+        }
+      ],
+      "n_docs_dominant": 110,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 23
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 8
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 5
+        },
+        {
+          "country": "Rusia",
+          "n_docs": 5
+        },
+        {
+          "country": "Australia",
+          "n_docs": 4
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "label": "T22",
+      "top_words": [
+        {
+          "word": "childhood",
+          "score": 1.9562146747231586
+        },
+        {
+          "word": "history",
+          "score": 0.8915524357990046
+        },
+        {
+          "word": "century",
+          "score": 0.27948820063202184
+        },
+        {
+          "word": "early",
+          "score": 0.2770621290796414
+        },
+        {
+          "word": "art",
+          "score": 0.21138449924584313
+        },
+        {
+          "word": "historical",
+          "score": 0.19534967356568445
+        },
+        {
+          "word": "book",
+          "score": 0.14972084618551967
+        },
+        {
+          "word": "twentieth",
+          "score": 0.14067968402963474
+        },
+        {
+          "word": "age",
+          "score": 0.1372509343244502
+        },
+        {
+          "word": "field",
+          "score": 0.13243621035356734
+        },
+        {
+          "word": "modern",
+          "score": 0.11840224648553063
+        },
+        {
+          "word": "period",
+          "score": 0.10418620698323457
+        },
+        {
+          "word": "ancient",
+          "score": 0.09928948888052529
+        },
+        {
+          "word": "world",
+          "score": 0.09599268230449538
+        },
+        {
+          "word": "scholarship",
+          "score": 0.09438197723572668
+        }
+      ],
+      "n_docs_dominant": 163,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 42
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 20
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 14
+        },
+        {
+          "country": "Australia",
+          "n_docs": 7
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 5
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "label": "T23",
+      "top_words": [
+        {
+          "word": "sex",
+          "score": 1.535487149753685
+        },
+        {
+          "word": "workers",
+          "score": 0.42759756325170833
+        },
+        {
+          "word": "sexual",
+          "score": 0.42207817089501193
+        },
+        {
+          "word": "intimacy",
+          "score": 0.38038061955858654
+        },
+        {
+          "word": "relationships",
+          "score": 0.29274024618822675
+        },
+        {
+          "word": "intimate",
+          "score": 0.23617572203561665
+        },
+        {
+          "word": "sexuality",
+          "score": 0.23541775828041983
+        },
+        {
+          "word": "prostitution",
+          "score": 0.23158417393513275
+        },
+        {
+          "word": "transactional",
+          "score": 0.17185692197635982
+        },
+        {
+          "word": "tourism",
+          "score": 0.1685070055159491
+        },
+        {
+          "word": "commercial",
+          "score": 0.16045173026522175
+        },
+        {
+          "word": "clients",
+          "score": 0.14592596420056994
+        },
+        {
+          "word": "female",
+          "score": 0.12938021755991863
+        },
+        {
+          "word": "emotional",
+          "score": 0.11435996087913937
+        },
+        {
+          "word": "gender",
+          "score": 0.11346243896093891
+        }
+      ],
+      "n_docs_dominant": 118,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 30
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 11
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 8
+        },
+        {
+          "country": "Países Bajos",
+          "n_docs": 6
+        },
+        {
+          "country": "Suiza",
+          "n_docs": 5
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "label": "T24",
+      "top_words": [
+        {
+          "word": "public",
+          "score": 0.4090323116216356
+        },
+        {
+          "word": "innovation",
+          "score": 0.3354317925504757
+        },
+        {
+          "word": "state",
+          "score": 0.3343076910843794
+        },
+        {
+          "word": "policy",
+          "score": 0.3067075788080173
+        },
+        {
+          "word": "institutional",
+          "score": 0.2916109209466351
+        },
+        {
+          "word": "poverty",
+          "score": 0.24837401454825092
+        },
+        {
+          "word": "change",
+          "score": 0.24586684105694115
+        },
+        {
+          "word": "education",
+          "score": 0.2407919850302299
+        },
+        {
+          "word": "global",
+          "score": 0.23521583671064808
+        },
+        {
+          "word": "new",
+          "score": 0.2281904347099616
+        },
+        {
+          "word": "private",
+          "score": 0.22448769390824805
+        },
+        {
+          "word": "development",
+          "score": 0.20776887288878584
+        },
+        {
+          "word": "risk",
+          "score": 0.20031461173853032
+        },
+        {
+          "word": "welfare",
+          "score": 0.18236062986453427
+        },
+        {
+          "word": "world",
+          "score": 0.18022247079770018
+        }
+      ],
+      "n_docs_dominant": 665,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 109
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 62
+        },
+        {
+          "country": "Francia",
+          "n_docs": 55
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 47
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 45
+        }
+      ]
+    }
+  ]
+}

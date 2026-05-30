@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etiquetado de tópicos — Zelizer / Wilkis 2026</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Etiquetado de tópicos</h1>
+  <p class="sub" id="meta">Cargando…</p>
+  <div class="toolbar">
+    <button id="btn-prev">← Anterior</button>
+    <span id="pos">0 / 0</span>
+    <button id="btn-next">Siguiente →</button>
+    <span class="spacer"></span>
+    <button id="btn-export">📥 Descargar mis nombres (JSON)</button>
+    <button id="btn-export-md">📋 Copiar como tabla Markdown</button>
+    <label class="btn">📤 Subir un JSON previo
+      <input type="file" id="btn-import" accept="application/json" hidden>
+    </label>
+    <button id="btn-clear" class="btn-danger">🗑 Borrar todo</button>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progress"></div>
+    <span class="progress-label" id="progress-label">0 / 0 etiquetados</span>
+  </div>
+</header>
+
+<main id="topic-card">
+  <!-- el JS rellena -->
+</main>
+
+<aside id="all-topics">
+  <h3>Todos los tópicos</h3>
+  <ol id="topic-list"></ol>
+</aside>
+
+<footer>
+  <p>Los nombres que pongas se guardan automáticamente en tu navegador (localStorage).
+     Cuando termines, <strong>descargá el JSON</strong> y mandámelo.
+     Si volvés a entrar más tarde, podés re-subir tu JSON con "📤 Subir un JSON previo".</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
