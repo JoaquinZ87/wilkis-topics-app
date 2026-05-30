@@ -77,8 +77,19 @@ function render() {
   const nameInput = document.getElementById("topic-name");
   const notesInput = document.getElementById("topic-notes");
   nameInput.focus();
+  nameInput.select();
   nameInput.addEventListener("input", () => saveCurrent(nameInput.value, notesInput.value));
   notesInput.addEventListener("input", () => saveCurrent(nameInput.value, notesInput.value));
+  // Enter en el nombre → guardar + avanzar al siguiente tópico
+  nameInput.addEventListener("keydown", e => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      const val = nameInput.value.trim();
+      if (!val) return;  // no avanzar si está vacío
+      saveCurrent(nameInput.value, notesInput.value);
+      goNext();
+    }
+  });
 
   // Pos and progress
   document.getElementById("pos").textContent = `${current + 1} / ${DATA.topics.length}`;
@@ -88,6 +99,67 @@ function render() {
   // Nav buttons
   document.getElementById("btn-prev").disabled = current === 0;
   document.getElementById("btn-next").disabled = current === DATA.topics.length - 1;
+}
+
+function goNext() {
+  // Buscar el próximo tópico sin etiquetar; si todos están etiquetados, ir al siguiente lineal
+  const labels = loadLabels();
+  const total = DATA.topics.length;
+
+  // Si no estamos en el último, avanzar lineal
+  if (current < total - 1) {
+    current++;
+    render();
+    return;
+  }
+
+  // Estamos en el último. ¿Quedan no-etiquetados en posiciones anteriores?
+  const sinEtiquetar = DATA.topics
+    .map((t, i) => ({ i, name: (labels[t.id]?.name || "").trim() }))
+    .filter(o => !o.name);
+
+  if (sinEtiquetar.length > 0) {
+    current = sinEtiquetar[0].i;
+    render();
+    return;
+  }
+
+  // ¡Terminó todos!
+  showFinalScreen();
+}
+
+function showFinalScreen() {
+  const labels = loadLabels();
+  const n_labeled = DATA.topics.filter(t => (labels[t.id]?.name || "").length > 0).length;
+  document.getElementById("topic-card").innerHTML = `
+    <div class="final-screen">
+      <h2>🎉 ¡Terminaste!</h2>
+      <p>Etiquetaste los <strong>${n_labeled} tópicos</strong>.</p>
+      <p>Ahora descargá el JSON y mandáselo a Joaquín:</p>
+      <button id="btn-final-download" class="btn-final-download">
+        📥 Descargar JSON con mis nombres
+      </button>
+      <button id="btn-final-md" class="btn-final-md">
+        📋 Copiar como tabla Markdown
+      </button>
+      <p class="final-hint">
+        Mandalo por mail, WhatsApp o como prefieras.<br>
+        Si querés revisar / editar algo, podés volver con las flechas
+        o clickeando un tópico de la lista de abajo.
+      </p>
+    </div>
+  `;
+  document.getElementById("btn-final-download").addEventListener("click", () => {
+    exportJson();
+    // Después de descargar mostrar un check visual
+    const btn = document.getElementById("btn-final-download");
+    btn.textContent = "✓ Descargado — ¡mandalo ahora!";
+    btn.style.background = "#059669";
+  });
+  document.getElementById("btn-final-md").addEventListener("click", exportMarkdown);
+  updateProgress();
+  renderList();
+  document.getElementById("pos").textContent = `${n_labeled} / ${DATA.topics.length}`;
 }
 
 function saveCurrent(name, notes) {

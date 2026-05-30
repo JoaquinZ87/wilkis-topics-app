@@ -162,3 +162,41 @@ footer {
   text-align: center;
 }
 footer strong { color: #059669; }
+
+.kbd-hint {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 6px;
+}
+.kbd-hint kbd {
+  background: #334155;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: white;
+}
+
+.final-screen {
+  text-align: center;
+  padding: 40px 20px;
+}
+.final-screen h2 { font-size: 32px; color: #059669; margin-bottom: 16px; }
+.final-screen p { color: #475569; margin-bottom: 16px; font-size: 16px; }
+.final-screen button {
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  margin: 10px 6px;
+  display: inline-block;
+}
+.btn-final-download { background: #059669 !important; font-weight: 600; }
+.btn-final-download:hover { background: #10b981 !important; }
+.btn-final-md { background: #2563eb !important; font-weight: 600; }
+.btn-final-md:hover { background: #3b82f6 !important; }
+.final-hint {
+  margin-top: 28px !important;
+  font-size: 13px !important;
+  color: #94a3b8 !important;
+  line-height: 1.6;
+}
