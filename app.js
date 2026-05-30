@@ -70,6 +70,9 @@ function render() {
       <label for="topic-name">Nombre interpretativo</label>
       <input type="text" id="topic-name" placeholder="Ej: Dinero íntimo / familia · Mercados morales · Valuación social…" value="${escapeAttr(entry.name)}">
       <textarea id="topic-notes" placeholder="Notas opcionales (subtemas, dudas, autores asociados…)">${escapeHtml(entry.notes)}</textarea>
+      <button id="btn-save-next" class="btn-save-next">
+        Guardar y avanzar →
+      </button>
     </div>
   `;
 
@@ -84,21 +87,35 @@ function render() {
   nameInput.addEventListener("keydown", e => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      const val = nameInput.value.trim();
-      if (!val) return;  // no avanzar si está vacío
-      saveCurrent(nameInput.value, notesInput.value);
-      goNext();
+      doSaveAndAdvance(nameInput, notesInput);
     }
+  });
+
+  // Botón "Guardar y avanzar"
+  document.getElementById("btn-save-next").addEventListener("click", () => {
+    doSaveAndAdvance(nameInput, notesInput);
   });
 
   // Pos and progress
   document.getElementById("pos").textContent = `${current + 1} / ${DATA.topics.length}`;
   updateProgress();
-  renderList();
 
   // Nav buttons
   document.getElementById("btn-prev").disabled = current === 0;
   document.getElementById("btn-next").disabled = current === DATA.topics.length - 1;
+}
+
+function doSaveAndAdvance(nameInput, notesInput) {
+  const val = nameInput.value.trim();
+  if (!val) {
+    // Shake visual si está vacío
+    nameInput.classList.add("shake");
+    setTimeout(() => nameInput.classList.remove("shake"), 400);
+    nameInput.focus();
+    return;
+  }
+  saveCurrent(nameInput.value, notesInput.value);
+  goNext();
 }
 
 function goNext() {
@@ -158,7 +175,6 @@ function showFinalScreen() {
   });
   document.getElementById("btn-final-md").addEventListener("click", exportMarkdown);
   updateProgress();
-  renderList();
   document.getElementById("pos").textContent = `${n_labeled} / ${DATA.topics.length}`;
 }
 
@@ -168,7 +184,6 @@ function saveCurrent(name, notes) {
   labels[t.id] = { name: name.trim(), notes: notes.trim() };
   saveLabels(labels);
   updateProgress();
-  renderList();
   // update saved indicator inline
   const ind = document.querySelector(".saved-indicator");
   if (ind) {
@@ -191,25 +206,6 @@ function updateProgress() {
     `${n_labeled} / ${DATA.topics.length} etiquetados`;
 }
 
-function renderList() {
-  const labels = loadLabels();
-  const ol = document.getElementById("topic-list");
-  ol.innerHTML = DATA.topics.map((t, i) => {
-    const lab = labels[t.id]?.name || "";
-    const isCurrent = i === current ? " current" : "";
-    const isLabeled = lab ? " labeled" : "";
-    const top3 = t.top_words.slice(0, 3).map(w => w.word).join(", ");
-    return `<li class="${isCurrent}${isLabeled}" data-idx="${i}">
-      <span><span class="topic-num">${t.label}</span> ${lab ? `<span class="topic-name">— ${escapeHtml(lab)}</span>` : `<em style="color:#94a3b8">(${escapeHtml(top3)})</em>`}</span>
-    </li>`;
-  }).join("");
-  ol.querySelectorAll("li").forEach(li => {
-    li.addEventListener("click", () => {
-      current = parseInt(li.dataset.idx);
-      render();
-    });
-  });
-}
 
 // ─────────────────────────────────────────────────────────────
 // Export / Import

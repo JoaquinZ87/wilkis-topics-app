@@ -116,6 +116,28 @@ main#topic-card {
   min-height: 60px; margin-top: 10px;
 }
 .label-form textarea:focus { outline: none; border-color: #3b82f6; }
+
+.btn-save-next {
+  margin-top: 14px;
+  background: #059669;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+}
+.btn-save-next:hover { background: #10b981; }
+.btn-save-next:active { transform: translateY(1px); }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+.shake { animation: shake .35s ease; border-color: #b91c1c !important; }
 .saved-indicator {
   display: inline-block; padding: 2px 10px;
   border-radius: 12px; font-size: 11px;
