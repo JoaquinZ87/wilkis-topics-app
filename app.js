@@ -68,7 +68,7 @@ function render() {
 
     <div class="label-form">
       <label for="topic-name">Nombre interpretativo</label>
-      <input type="text" id="topic-name" placeholder="Ej: Dinero íntimo / familia · Mercados morales · Valuación social…" value="${escapeAttr(entry.name)}">
+      <input type="text" id="topic-name" value="${escapeAttr(entry.name)}">
       <textarea id="topic-notes" placeholder="Notas opcionales (subtemas, dudas, autores asociados…)">${escapeHtml(entry.notes)}</textarea>
       <button id="btn-save-next" class="btn-save-next">
         Guardar y avanzar →
