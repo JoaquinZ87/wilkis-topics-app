@@ -235,25 +235,25 @@ function showFinalScreen() {
     (n_discarded > 0 ? ` y <strong>${n_discarded} descartado${n_discarded > 1 ? "s" : ""}</strong>` : "");
   document.getElementById("topic-card").innerHTML = `
     <div class="final-screen">
-      <h2>🎉 ¡Terminaste!</h2>
+      <h2>🎉 ¡Terminaste de etiquetar!</h2>
       <p>${stats} de ${DATA.topics.length} tópicos.</p>
-      <p>Ahora descargá el JSON y mandáselo a Joaquín:</p>
-      <button id="btn-final-download" class="btn-final-download">
-        📥 Descargar JSON con mis nombres
+      <p>¿Querés ahora <strong>agrupar tópicos similares</strong> bajo un mismo concepto?<br>
+         Te permite consolidar los nombres entre los modelos NMF/LDA/BERT.</p>
+      <button id="btn-goto-grouping" class="btn-final-download">
+        🔗 Ir a agrupar tópicos
+      </button>
+      <p style="margin-top: 24px; color: #94a3b8;">— o, si ya está —</p>
+      <button id="btn-final-download" class="btn-final-md">
+        📥 Descargar JSON
       </button>
       <button id="btn-final-md" class="btn-final-md">
-        📋 Copiar como tabla Markdown
+        📋 Copiar Markdown
       </button>
-      <p class="final-hint">
-        Mandalo por mail, WhatsApp o como prefieras.<br>
-        Si querés revisar / editar algo, podés volver con las flechas
-        o clickeando un tópico de la lista de abajo.
-      </p>
     </div>
   `;
+  document.getElementById("btn-goto-grouping").addEventListener("click", showGroupingScreen);
   document.getElementById("btn-final-download").addEventListener("click", () => {
     exportJson();
-    // Después de descargar mostrar un check visual
     const btn = document.getElementById("btn-final-download");
     btn.textContent = "✓ Descargado — ¡mandalo ahora!";
     btn.style.background = "#059669";
@@ -261,6 +261,212 @@ function showFinalScreen() {
   document.getElementById("btn-final-md").addEventListener("click", exportMarkdown);
   updateProgress();
   document.getElementById("pos").textContent = `${n_labeled} / ${DATA.topics.length}`;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Pantalla de agrupamiento ("unir puntos")
+// ─────────────────────────────────────────────────────────────
+let SELECTED_FOR_GROUP = new Set();  // topic_ids seleccionados para fusionar
+
+function showGroupingScreen() {
+  const labels = loadLabels();
+  const labeledTopics = DATA.topics.filter(t =>
+    (labels[t.id]?.name || "").trim() && !labels[t.id]?.discarded
+  );
+
+  // Construir grupos actuales (por nombre normalizado)
+  const groupsByName = {};
+  for (const t of labeledTopics) {
+    const key = normalizeName(labels[t.id].name);
+    if (!groupsByName[key]) {
+      groupsByName[key] = { display_name: labels[t.id].name.trim(), topics: [] };
+    }
+    groupsByName[key].topics.push(t);
+  }
+  const groupsList = Object.entries(groupsByName).sort(
+    (a, b) => b[1].topics.length - a[1].topics.length
+  );
+
+  // Color por grupo (para conectar visualmente miembros)
+  const groupColors = ["#3b82f6", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899",
+                       "#06b6d4", "#84cc16", "#f97316", "#a855f7", "#14b8a6"];
+  const colorByKey = {};
+  let colorIdx = 0;
+  for (const [key, g] of groupsList) {
+    if (g.topics.length > 1) {
+      colorByKey[key] = groupColors[colorIdx % groupColors.length];
+      colorIdx++;
+    }
+  }
+
+  // Card HTML
+  const grid = labeledTopics.map(t => {
+    const lab = labels[t.id];
+    const key = normalizeName(lab.name);
+    const groupColor = colorByKey[key];
+    const isInGroup = groupColor !== undefined;
+    const isSelected = SELECTED_FOR_GROUP.has(t.id);
+    const sourceBadge = t.source
+      ? `<span class="source-badge source-${t.source.toLowerCase()}">${t.source}</span>`
+      : "";
+    const groupTag = isInGroup
+      ? `<span class="group-dot" style="background: ${groupColor}"></span>`
+      : "";
+    const top3 = t.top_words.slice(0, 3).map(w => w.word).join(", ");
+    return `
+      <div class="group-card${isSelected ? " selected" : ""}${isInGroup ? " in-group" : ""}"
+           data-tid="${t.id}"
+           ${isInGroup ? `style="border-left-color: ${groupColor}"` : ""}>
+        <div class="group-card-header">
+          ${groupTag}
+          <span class="group-card-label">${escapeHtml(t.label)}</span>
+          ${sourceBadge}
+        </div>
+        <div class="group-card-name">${escapeHtml(lab.name)}</div>
+        <div class="group-card-words">${escapeHtml(top3)}</div>
+      </div>
+    `;
+  }).join("");
+
+  // Lista de grupos actuales
+  const currentGroupsHtml = groupsList
+    .filter(([, g]) => g.topics.length > 1)
+    .map(([key, g]) => `
+      <div class="existing-group" style="border-left-color: ${colorByKey[key]}">
+        <div class="existing-group-name">
+          <span class="group-dot" style="background: ${colorByKey[key]}"></span>
+          ${escapeHtml(g.display_name)}
+          <span class="existing-group-count">${g.topics.length} tópicos</span>
+          <button class="btn-ungroup-mini" data-key="${escapeAttr(key)}">Separar</button>
+        </div>
+        <div class="existing-group-items">
+          ${g.topics.map(t => `<code>${escapeHtml(t.label)}</code>`).join(" + ")}
+        </div>
+      </div>
+    `).join("");
+
+  document.getElementById("topic-card").innerHTML = `
+    <div class="grouping-screen">
+      <h2>🔗 Agrupar tópicos</h2>
+      <p class="grouping-hint">
+        Cliqueá dos o más tarjetas para seleccionarlas y unirlas bajo un mismo concepto.
+        Los grupos ya existentes están conectados visualmente con un punto de color en cada miembro.
+      </p>
+
+      ${currentGroupsHtml ? `
+        <div class="current-groups">
+          <h3>Grupos actuales (${groupsList.filter(([, g]) => g.topics.length > 1).length})</h3>
+          ${currentGroupsHtml}
+        </div>
+      ` : ""}
+
+      <div class="grouping-actions">
+        <button id="btn-merge-selected" class="btn-merge-selected" disabled>
+          Unir <span id="n-selected">0</span> tópico(s) seleccionado(s)
+        </button>
+        <button id="btn-clear-selection" class="btn-clear-selection">
+          Limpiar selección
+        </button>
+        <span class="spacer-flex"></span>
+        <button id="btn-back-to-edit" class="btn-clear-selection">
+          ← Volver a editar nombres
+        </button>
+        <button id="btn-export-final" class="btn-final-download">
+          📥 Descargar JSON
+        </button>
+      </div>
+
+      <div class="group-grid">${grid}</div>
+    </div>
+  `;
+
+  // Eventos
+  document.querySelectorAll(".group-card").forEach(card => {
+    card.addEventListener("click", () => toggleCardSelection(card));
+  });
+  document.getElementById("btn-merge-selected").addEventListener("click", mergeSelected);
+  document.getElementById("btn-clear-selection").addEventListener("click", () => {
+    SELECTED_FOR_GROUP.clear();
+    showGroupingScreen();
+  });
+  document.getElementById("btn-back-to-edit").addEventListener("click", () => {
+    current = 0;
+    SELECTED_FOR_GROUP.clear();
+    render();
+  });
+  document.getElementById("btn-export-final").addEventListener("click", () => {
+    exportJson();
+    document.getElementById("btn-export-final").textContent = "✓ Descargado — ¡mandalo ahora!";
+  });
+  document.querySelectorAll(".btn-ungroup-mini").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      const key = btn.dataset.key;
+      ungroupByKey(key);
+    });
+  });
+
+  updateSelectedCount();
+}
+
+function toggleCardSelection(card) {
+  const tid = card.dataset.tid;
+  if (SELECTED_FOR_GROUP.has(tid)) {
+    SELECTED_FOR_GROUP.delete(tid);
+    card.classList.remove("selected");
+  } else {
+    SELECTED_FOR_GROUP.add(tid);
+    card.classList.add("selected");
+  }
+  updateSelectedCount();
+}
+
+function updateSelectedCount() {
+  const n = SELECTED_FOR_GROUP.size;
+  const span = document.getElementById("n-selected");
+  if (span) span.textContent = n;
+  const btn = document.getElementById("btn-merge-selected");
+  if (btn) btn.disabled = n < 2;
+}
+
+function mergeSelected() {
+  if (SELECTED_FOR_GROUP.size < 2) return;
+  const labels = loadLabels();
+  const tids = Array.from(SELECTED_FOR_GROUP);
+  // Sugerir el primer nombre como default
+  const firstName = labels[tids[0]]?.name || "";
+  const newName = prompt(
+    `Unir ${tids.length} tópicos bajo el mismo nombre.\n\n` +
+    `Escribí el nombre del concepto unificado:`,
+    firstName
+  );
+  if (!newName || !newName.trim()) return;
+  const trimmed = newName.trim();
+  for (const tid of tids) {
+    if (!labels[tid]) labels[tid] = { name: "", notes: "", discarded: false };
+    labels[tid].name = trimmed;
+    labels[tid].discarded = false;
+  }
+  saveLabels(labels);
+  SELECTED_FOR_GROUP.clear();
+  showGroupingScreen();
+}
+
+function ungroupByKey(key) {
+  if (!confirm("¿Separar este grupo? Cada tópico mantendrá su nombre pero ya no estarán unificados.")) {
+    return;
+  }
+  const labels = loadLabels();
+  // A los miembros del grupo, agregarles un sufijo para que el nombre sea único
+  let i = 1;
+  for (const t of DATA.topics) {
+    const entry = labels[t.id];
+    if (entry?.name && normalizeName(entry.name) === key) {
+      entry.name = entry.name.trim() + ` (${i++})`;
+    }
+  }
+  saveLabels(labels);
+  showGroupingScreen();
 }
 
 function saveCurrent(name, notes, discarded = false) {
