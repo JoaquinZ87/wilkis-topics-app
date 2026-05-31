@@ -52,9 +52,14 @@ function render() {
     `<span class="country-chip"><strong>${escapeHtml(c.country)}</strong> · ${c.n_docs} docs</span>`
   ).join("");
 
-  const savedHtml = entry.name
-    ? `<span class="saved-indicator saved-yes">✓ Guardado</span>`
-    : `<span class="saved-indicator saved-no">⚠ Sin nombre</span>`;
+  let savedHtml;
+  if (entry.discarded) {
+    savedHtml = `<span class="saved-indicator saved-discarded">✗ Descartado</span>`;
+  } else if (entry.name) {
+    savedHtml = `<span class="saved-indicator saved-yes">✓ Guardado</span>`;
+  } else {
+    savedHtml = `<span class="saved-indicator saved-no">⚠ Sin decidir</span>`;
+  }
 
   document.getElementById("topic-card").innerHTML = `
     <div class="card-header">
@@ -70,9 +75,14 @@ function render() {
       <label for="topic-name">Nombre interpretativo</label>
       <input type="text" id="topic-name" value="${escapeAttr(entry.name)}">
       <textarea id="topic-notes" placeholder="Notas opcionales (subtemas, dudas, autores asociados…)">${escapeHtml(entry.notes)}</textarea>
-      <button id="btn-save-next" class="btn-save-next">
-        Guardar y avanzar →
-      </button>
+      <div class="action-row">
+        <button id="btn-save-next" class="btn-save-next">
+          Guardar y avanzar →
+        </button>
+        <button id="btn-discard" class="btn-discard" title="Descartar este tópico y seguir al próximo">
+          ✗ Descartar
+        </button>
+      </div>
     </div>
   `;
 
@@ -96,6 +106,11 @@ function render() {
     doSaveAndAdvance(nameInput, notesInput);
   });
 
+  // Botón "Descartar"
+  document.getElementById("btn-discard").addEventListener("click", () => {
+    doDiscard(notesInput.value);
+  });
+
   // Pos and progress
   document.getElementById("pos").textContent = `${current + 1} / ${DATA.topics.length}`;
   updateProgress();
@@ -114,7 +129,13 @@ function doSaveAndAdvance(nameInput, notesInput) {
     nameInput.focus();
     return;
   }
-  saveCurrent(nameInput.value, notesInput.value);
+  saveCurrent(nameInput.value, notesInput.value, false);
+  goNext();
+}
+
+function doDiscard(notes) {
+  // Marca como descartado y avanza. Conserva notas si las hay.
+  saveCurrent("", notes, true);
   goNext();
 }
 
@@ -130,13 +151,13 @@ function goNext() {
     return;
   }
 
-  // Estamos en el último. ¿Quedan no-etiquetados en posiciones anteriores?
-  const sinEtiquetar = DATA.topics
-    .map((t, i) => ({ i, name: (labels[t.id]?.name || "").trim() }))
-    .filter(o => !o.name);
+  // Estamos en el último. ¿Quedan tópicos SIN decidir (ni etiquetados ni descartados)?
+  const sinDecidir = DATA.topics
+    .map((t, i) => ({ i, entry: labels[t.id] || {} }))
+    .filter(o => !(o.entry.name || "").trim() && !o.entry.discarded);
 
-  if (sinEtiquetar.length > 0) {
-    current = sinEtiquetar[0].i;
+  if (sinDecidir.length > 0) {
+    current = sinDecidir[0].i;
     render();
     return;
   }
@@ -148,10 +169,13 @@ function goNext() {
 function showFinalScreen() {
   const labels = loadLabels();
   const n_labeled = DATA.topics.filter(t => (labels[t.id]?.name || "").length > 0).length;
+  const n_discarded = DATA.topics.filter(t => labels[t.id]?.discarded).length;
+  const stats = `<strong>${n_labeled} etiquetado${n_labeled !== 1 ? "s" : ""}</strong>` +
+    (n_discarded > 0 ? ` y <strong>${n_discarded} descartado${n_discarded > 1 ? "s" : ""}</strong>` : "");
   document.getElementById("topic-card").innerHTML = `
     <div class="final-screen">
       <h2>🎉 ¡Terminaste!</h2>
-      <p>Etiquetaste los <strong>${n_labeled} tópicos</strong>.</p>
+      <p>${stats} de ${DATA.topics.length} tópicos.</p>
       <p>Ahora descargá el JSON y mandáselo a Joaquín:</p>
       <button id="btn-final-download" class="btn-final-download">
         📥 Descargar JSON con mis nombres
@@ -178,16 +202,23 @@ function showFinalScreen() {
   document.getElementById("pos").textContent = `${n_labeled} / ${DATA.topics.length}`;
 }
 
-function saveCurrent(name, notes) {
+function saveCurrent(name, notes, discarded = false) {
   const labels = loadLabels();
   const t = DATA.topics[current];
-  labels[t.id] = { name: name.trim(), notes: notes.trim() };
+  labels[t.id] = {
+    name: name.trim(),
+    notes: notes.trim(),
+    discarded: !!discarded,
+  };
   saveLabels(labels);
   updateProgress();
   // update saved indicator inline
   const ind = document.querySelector(".saved-indicator");
   if (ind) {
-    if (name.trim()) {
+    if (discarded) {
+      ind.className = "saved-indicator saved-discarded";
+      ind.textContent = "✗ Descartado";
+    } else if (name.trim()) {
       ind.className = "saved-indicator saved-yes";
       ind.textContent = "✓ Guardado";
     } else {
@@ -200,10 +231,13 @@ function saveCurrent(name, notes) {
 function updateProgress() {
   const labels = loadLabels();
   const n_labeled = DATA.topics.filter(t => (labels[t.id]?.name || "").length > 0).length;
-  const pct = (n_labeled / DATA.topics.length) * 100;
+  const n_discarded = DATA.topics.filter(t => labels[t.id]?.discarded).length;
+  const n_decided = n_labeled + n_discarded;
+  const pct = (n_decided / DATA.topics.length) * 100;
   document.getElementById("progress").style.width = pct.toFixed(1) + "%";
+  const discTxt = n_discarded > 0 ? ` (${n_discarded} descartado${n_discarded > 1 ? "s" : ""})` : "";
   document.getElementById("progress-label").textContent =
-    `${n_labeled} / ${DATA.topics.length} etiquetados`;
+    `${n_labeled} etiquetado${n_labeled !== 1 ? "s" : ""}${discTxt} / ${DATA.topics.length}`;
 }
 
 
@@ -223,6 +257,7 @@ function exportJson() {
       top_words: t.top_words.slice(0, 5).map(w => w.word),
       name: labels[t.id]?.name || "",
       notes: labels[t.id]?.notes || "",
+      discarded: !!labels[t.id]?.discarded,
     })),
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
@@ -238,8 +273,12 @@ function exportMarkdown() {
   const labels = loadLabels();
   const rows = DATA.topics.map(t => {
     const top5 = t.top_words.slice(0, 5).map(w => w.word).join(", ");
-    const name = labels[t.id]?.name || "*(sin nombre)*";
-    const notes = (labels[t.id]?.notes || "").replace(/\n/g, " ");
+    const entry = labels[t.id] || {};
+    let name;
+    if (entry.discarded) name = "*(descartado)*";
+    else if (entry.name) name = entry.name;
+    else name = "*(sin decidir)*";
+    const notes = (entry.notes || "").replace(/\n/g, " ");
     return `| ${t.label} | ${name} | ${top5} | ${notes} |`;
   }).join("\n");
   const md = `| ID | Nombre | Top words | Notas |\n|---|---|---|---|\n${rows}`;

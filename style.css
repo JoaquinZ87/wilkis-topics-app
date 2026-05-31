@@ -117,8 +117,12 @@ main#topic-card {
 }
 .label-form textarea:focus { outline: none; border-color: #3b82f6; }
 
-.btn-save-next {
+.action-row {
+  display: flex;
+  gap: 10px;
   margin-top: 14px;
+}
+.btn-save-next {
   background: #059669;
   color: white;
   font-size: 15px;
@@ -127,10 +131,26 @@ main#topic-card {
   border-radius: 8px;
   cursor: pointer;
   border: none;
-  width: 100%;
+  flex: 1;
 }
 .btn-save-next:hover { background: #10b981; }
 .btn-save-next:active { transform: translateY(1px); }
+
+.btn-discard {
+  background: #94a3b8;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+.btn-discard:hover { background: #64748b; }
+.btn-discard:active { transform: translateY(1px); }
+
+.saved-discarded { background: #e5e7eb; color: #475569; }
 
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
