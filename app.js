@@ -75,8 +75,13 @@ function render() {
     <div class="country-list">${countries || "<em>Sin datos por país</em>"}</div>
 
     <div class="label-form">
-      <label for="topic-name">Nombre interpretativo</label>
-      <input type="text" id="topic-name" value="${escapeAttr(entry.name)}">
+      <label for="topic-name">
+        Nombre interpretativo
+        <span class="hint-merge">Si querés UNIFICAR este tópico con otro, escribí el mismo nombre que ya pusiste antes (se autocompleta).</span>
+      </label>
+      <input type="text" id="topic-name" value="${escapeAttr(entry.name)}" list="existing-names" autocomplete="off">
+      <datalist id="existing-names">${getExistingNamesDatalist(labels, t.id)}</datalist>
+      <div id="merge-indicator"></div>
       <textarea id="topic-notes" placeholder="Notas opcionales (subtemas, dudas, autores asociados…)">${escapeHtml(entry.notes)}</textarea>
       <div class="action-row">
         <button id="btn-save-next" class="btn-save-next">
@@ -94,8 +99,13 @@ function render() {
   const notesInput = document.getElementById("topic-notes");
   nameInput.focus();
   nameInput.select();
-  nameInput.addEventListener("input", () => saveCurrent(nameInput.value, notesInput.value));
+  nameInput.addEventListener("input", () => {
+    saveCurrent(nameInput.value, notesInput.value);
+    updateMergeIndicator(nameInput.value);
+  });
   notesInput.addEventListener("input", () => saveCurrent(nameInput.value, notesInput.value));
+  // estado inicial del indicador
+  updateMergeIndicator(nameInput.value);
   // Enter en el nombre → guardar + avanzar al siguiente tópico
   nameInput.addEventListener("keydown", e => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -140,6 +150,54 @@ function doDiscard(notes) {
   // Marca como descartado y avanza. Conserva notas si las hay.
   saveCurrent("", notes, true);
   goNext();
+}
+
+// ─────────────────────────────────────────────────────────────
+// Unificación de tópicos (fusión por nombre repetido)
+// ─────────────────────────────────────────────────────────────
+function normalizeName(s) {
+  return (s || "").trim().toLowerCase()
+    .normalize("NFD").replace(/[̀-ͯ]/g, "");  // sin acentos
+}
+
+function getExistingNamesDatalist(labels, currentTopicId) {
+  const names = new Set();
+  for (const [tid, entry] of Object.entries(labels)) {
+    if (tid === String(currentTopicId)) continue;
+    if (entry?.name && entry.name.trim()) names.add(entry.name.trim());
+  }
+  return Array.from(names).sort().map(n => `<option value="${escapeAttr(n)}">`).join("");
+}
+
+function findSiblings(name, currentTopicId) {
+  const labels = loadLabels();
+  const target = normalizeName(name);
+  if (!target) return [];
+  const siblings = [];
+  for (const t of DATA.topics) {
+    if (String(t.id) === String(currentTopicId)) continue;
+    const entry = labels[t.id];
+    if (entry?.name && normalizeName(entry.name) === target) {
+      siblings.push(t);
+    }
+  }
+  return siblings;
+}
+
+function updateMergeIndicator(name) {
+  const indicator = document.getElementById("merge-indicator");
+  if (!indicator) return;
+  const t = DATA.topics[current];
+  const siblings = findSiblings(name, t.id);
+  if (siblings.length === 0) {
+    indicator.innerHTML = "";
+    indicator.className = "";
+    return;
+  }
+  const labels = siblings.map(s => `<code>${escapeHtml(s.label)}</code>`).join(", ");
+  indicator.className = "merge-indicator-active";
+  indicator.innerHTML =
+    `🔗 Se unifica con ${siblings.length} tópico${siblings.length > 1 ? "s" : ""}: ${labels}`;
 }
 
 function goNext() {
@@ -249,20 +307,42 @@ function updateProgress() {
 // ─────────────────────────────────────────────────────────────
 function exportJson() {
   const labels = loadLabels();
+  const labelsList = DATA.topics.map(t => ({
+    id: t.id,
+    label: t.label,
+    source: t.source || "",
+    top_words: t.top_words.slice(0, 5).map(w => w.word),
+    name: labels[t.id]?.name || "",
+    notes: labels[t.id]?.notes || "",
+    discarded: !!labels[t.id]?.discarded,
+  }));
+  // Agrupar por nombre normalizado (unificaciones)
+  const groups = {};
+  for (const item of labelsList) {
+    if (item.discarded || !item.name.trim()) continue;
+    const key = normalizeName(item.name);
+    if (!groups[key]) {
+      groups[key] = { unified_name: item.name.trim(), topic_ids: [], sources: new Set() };
+    }
+    groups[key].topic_ids.push(item.id);
+    if (item.source) groups[key].sources.add(item.source);
+  }
+  const unifiedGroups = Object.values(groups).map(g => ({
+    unified_name: g.unified_name,
+    n_topics: g.topic_ids.length,
+    topic_ids: g.topic_ids,
+    sources: Array.from(g.sources).sort(),
+  })).sort((a, b) => b.n_topics - a.n_topics || a.unified_name.localeCompare(b.unified_name));
+
   const payload = {
     project: "Zelizer / Wilkis 2026",
     model: DATA.model,
-    k: DATA.k,
     exported_at: new Date().toISOString(),
-    labels: DATA.topics.map(t => ({
-      id: t.id,
-      label: t.label,
-      source: t.source || "",
-      top_words: t.top_words.slice(0, 5).map(w => w.word),
-      name: labels[t.id]?.name || "",
-      notes: labels[t.id]?.notes || "",
-      discarded: !!labels[t.id]?.discarded,
-    })),
+    n_unified_concepts: unifiedGroups.length,
+    n_topics_with_name: labelsList.filter(l => l.name && !l.discarded).length,
+    n_discarded: labelsList.filter(l => l.discarded).length,
+    unified_groups: unifiedGroups,
+    labels: labelsList,
   };
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
