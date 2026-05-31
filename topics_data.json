@@ -1,8 +1,10 @@
 {
   "model": "NMF",
   "k": 25,
-  "n_docs_total": 4246,
-  "subset": "Zelizer internacional (excl. US) — abstracts traducidos al inglés",
+  "n_docs_total": 6775,
+  "n_docs_intl": 4246,
+  "n_docs_us": 2529,
+  "subset": "NMF entrenado sobre Zelizer internacional (excl. US). Conteo por país INCLUYE US para mostrar peso geográfico completo. Abstracts traducidos al inglés.",
   "topics": [
     {
       "id": 0,
@@ -69,8 +71,12 @@
           "score": 0.26142959657578063
         }
       ],
-      "n_docs_dominant": 52,
+      "n_docs_dominant": 85,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 33
+        },
         {
           "country": "Rusia",
           "n_docs": 7
@@ -158,8 +164,12 @@
           "score": 0.07660167331109058
         }
       ],
-      "n_docs_dominant": 273,
+      "n_docs_dominant": 477,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 204
+        },
         {
           "country": "Reino Unido",
           "n_docs": 67
@@ -177,8 +187,8 @@
           "n_docs": 21
         },
         {
-          "country": "Alemania",
-          "n_docs": 11
+          "country": "Noruega",
+          "n_docs": 17
         }
       ]
     },
@@ -247,8 +257,12 @@
           "score": 0.08052004159728592
         }
       ],
-      "n_docs_dominant": 334,
+      "n_docs_dominant": 475,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 141
+        },
         {
           "country": "Reino Unido",
           "n_docs": 70
@@ -336,8 +350,12 @@
           "score": 0.10092234237233569
         }
       ],
-      "n_docs_dominant": 127,
+      "n_docs_dominant": 186,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 59
+        },
         {
           "country": "Reino Unido",
           "n_docs": 22
@@ -425,8 +443,12 @@
           "score": 0.07609087926655089
         }
       ],
-      "n_docs_dominant": 243,
+      "n_docs_dominant": 339,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 96
+        },
         {
           "country": "Francia",
           "n_docs": 42
@@ -514,11 +536,15 @@
           "score": 0.31246837533025834
         }
       ],
-      "n_docs_dominant": 53,
+      "n_docs_dominant": 70,
       "top_countries": [
         {
           "country": "Rusia",
           "n_docs": 20
+        },
+        {
+          "country": "Estados Unidos",
+          "n_docs": 17
         },
         {
           "country": "Francia",
@@ -603,8 +629,12 @@
           "score": 0.13049698016675879
         }
       ],
-      "n_docs_dominant": 201,
+      "n_docs_dominant": 312,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 111
+        },
         {
           "country": "Francia",
           "n_docs": 30
@@ -692,8 +722,12 @@
           "score": 0.14045118166100917
         }
       ],
-      "n_docs_dominant": 162,
+      "n_docs_dominant": 233,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 71
+        },
         {
           "country": "Reino Unido",
           "n_docs": 55
@@ -781,8 +815,12 @@
           "score": 0.14887244430309157
         }
       ],
-      "n_docs_dominant": 133,
+      "n_docs_dominant": 201,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 68
+        },
         {
           "country": "Reino Unido",
           "n_docs": 34
@@ -870,8 +908,12 @@
           "score": 0.17610219762138773
         }
       ],
-      "n_docs_dominant": 138,
+      "n_docs_dominant": 229,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 91
+        },
         {
           "country": "Reino Unido",
           "n_docs": 30
@@ -959,8 +1001,12 @@
           "score": 0.13372701611508486
         }
       ],
-      "n_docs_dominant": 126,
+      "n_docs_dominant": 189,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 63
+        },
         {
           "country": "Rusia",
           "n_docs": 21
@@ -1048,11 +1094,19 @@
           "score": 0.18020042850388876
         }
       ],
-      "n_docs_dominant": 98,
+      "n_docs_dominant": 127,
       "top_countries": [
         {
           "country": "Reino Unido",
           "n_docs": 38
+        },
+        {
+          "country": "Estados Unidos",
+          "n_docs": 29
+        },
+        {
+          "country": "Dinamarca",
+          "n_docs": 7
         },
         {
           "country": "Alemania",
@@ -1064,10 +1118,6 @@
         },
         {
           "country": "Australia",
-          "n_docs": 6
-        },
-        {
-          "country": "Rusia",
           "n_docs": 6
         }
       ]
@@ -1137,8 +1187,12 @@
           "score": 0.13364270380090776
         }
       ],
-      "n_docs_dominant": 113,
+      "n_docs_dominant": 162,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 49
+        },
         {
           "country": "Reino Unido",
           "n_docs": 23
@@ -1226,8 +1280,12 @@
           "score": 0.10970092309373722
         }
       ],
-      "n_docs_dominant": 101,
+      "n_docs_dominant": 161,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 60
+        },
         {
           "country": "Reino Unido",
           "n_docs": 19
@@ -1315,8 +1373,12 @@
           "score": 0.15012989048704609
         }
       ],
-      "n_docs_dominant": 178,
+      "n_docs_dominant": 327,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 149
+        },
         {
           "country": "Reino Unido",
           "n_docs": 32
@@ -1404,8 +1466,12 @@
           "score": 0.0872355342397174
         }
       ],
-      "n_docs_dominant": 136,
+      "n_docs_dominant": 247,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 111
+        },
         {
           "country": "Reino Unido",
           "n_docs": 30
@@ -1493,8 +1559,12 @@
           "score": 0.09530052928654159
         }
       ],
-      "n_docs_dominant": 106,
+      "n_docs_dominant": 184,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 78
+        },
         {
           "country": "Reino Unido",
           "n_docs": 22
@@ -1582,8 +1652,12 @@
           "score": 0.13616874878980523
         }
       ],
-      "n_docs_dominant": 91,
+      "n_docs_dominant": 177,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 86
+        },
         {
           "country": "Reino Unido",
           "n_docs": 18
@@ -1671,8 +1745,12 @@
           "score": 0.14772190348444003
         }
       ],
-      "n_docs_dominant": 298,
+      "n_docs_dominant": 488,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 190
+        },
         {
           "country": "Reino Unido",
           "n_docs": 45
@@ -1760,8 +1838,12 @@
           "score": 0.08262162545128492
         }
       ],
-      "n_docs_dominant": 91,
+      "n_docs_dominant": 148,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 57
+        },
         {
           "country": "Reino Unido",
           "n_docs": 23
@@ -1775,11 +1857,11 @@
           "n_docs": 5
         },
         {
-          "country": "Alemania",
-          "n_docs": 3
+          "country": "Dinamarca",
+          "n_docs": 4
         },
         {
-          "country": "Canadá",
+          "country": "Alemania",
           "n_docs": 3
         }
       ]
@@ -1849,8 +1931,12 @@
           "score": 0.0800931613845968
         }
       ],
-      "n_docs_dominant": 136,
+      "n_docs_dominant": 235,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 99
+        },
         {
           "country": "Reino Unido",
           "n_docs": 31
@@ -1938,11 +2024,19 @@
           "score": 0.15083363257733495
         }
       ],
-      "n_docs_dominant": 110,
+      "n_docs_dominant": 181,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 71
+        },
         {
           "country": "Reino Unido",
           "n_docs": 23
+        },
+        {
+          "country": "Singapur",
+          "n_docs": 19
         },
         {
           "country": "Alemania",
@@ -1955,10 +2049,6 @@
         {
           "country": "Rusia",
           "n_docs": 5
-        },
-        {
-          "country": "Australia",
-          "n_docs": 4
         }
       ]
     },
@@ -2027,8 +2117,12 @@
           "score": 0.09438197723572668
         }
       ],
-      "n_docs_dominant": 163,
+      "n_docs_dominant": 257,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 94
+        },
         {
           "country": "Reino Unido",
           "n_docs": 42
@@ -2042,12 +2136,12 @@
           "n_docs": 14
         },
         {
-          "country": "Australia",
-          "n_docs": 7
+          "country": "Noruega",
+          "n_docs": 8
         },
         {
-          "country": "Brasil",
-          "n_docs": 5
+          "country": "Australia",
+          "n_docs": 7
         }
       ]
     },
@@ -2116,8 +2210,12 @@
           "score": 0.11346243896093891
         }
       ],
-      "n_docs_dominant": 118,
+      "n_docs_dominant": 199,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 81
+        },
         {
           "country": "Reino Unido",
           "n_docs": 30
@@ -2205,8 +2303,12 @@
           "score": 0.18022247079770018
         }
       ],
-      "n_docs_dominant": 665,
+      "n_docs_dominant": 1086,
       "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 421
+        },
         {
           "country": "Reino Unido",
           "n_docs": 109
