@@ -1,14 +1,19 @@
 {
-  "model": "NMF",
-  "k": 25,
+  "model": "NMF + LDA inéditos + BERTopic inéditos",
+  "k_per_model": 25,
+  "n_topics_total": 45,
+  "n_nmf": 25,
+  "n_lda_inedito": 5,
+  "n_bert_inedito": 15,
   "n_docs_total": 6775,
   "n_docs_intl": 4246,
   "n_docs_us": 2529,
-  "subset": "NMF entrenado sobre Zelizer internacional (excl. US). Conteo por país INCLUYE US para mostrar peso geográfico completo. Abstracts traducidos al inglés.",
+  "subset": "NMF (25 tópicos base) + LDA inéditos + BERTopic inéditos. Conteo por país incluye US. Abstracts traducidos al inglés.",
   "topics": [
     {
-      "id": 0,
-      "label": "T00",
+      "id": "NMF_00",
+      "label": "NMF T00",
+      "source": "NMF",
       "top_words": [
         {
           "word": "economic",
@@ -100,8 +105,9 @@
       ]
     },
     {
-      "id": 1,
-      "label": "T01",
+      "id": "NMF_01",
+      "label": "NMF T01",
+      "source": "NMF",
       "top_words": [
         {
           "word": "children",
@@ -193,8 +199,9 @@
       ]
     },
     {
-      "id": 2,
-      "label": "T02",
+      "id": "NMF_02",
+      "label": "NMF T02",
+      "source": "NMF",
       "top_words": [
         {
           "word": "money",
@@ -286,8 +293,9 @@
       ]
     },
     {
-      "id": 3,
-      "label": "T03",
+      "id": "NMF_03",
+      "label": "NMF T03",
+      "source": "NMF",
       "top_words": [
         {
           "word": "insurance",
@@ -379,8 +387,9 @@
       ]
     },
     {
-      "id": 4,
-      "label": "T04",
+      "id": "NMF_04",
+      "label": "NMF T04",
+      "source": "NMF",
       "top_words": [
         {
           "word": "political",
@@ -472,8 +481,9 @@
       ]
     },
     {
-      "id": 5,
-      "label": "T05",
+      "id": "NMF_05",
+      "label": "NMF T05",
+      "source": "NMF",
       "top_words": [
         {
           "word": "economic",
@@ -565,8 +575,9 @@
       ]
     },
     {
-      "id": 6,
-      "label": "T06",
+      "id": "NMF_06",
+      "label": "NMF T06",
+      "source": "NMF",
       "top_words": [
         {
           "word": "market",
@@ -658,8 +669,9 @@
       ]
     },
     {
-      "id": 7,
-      "label": "T07",
+      "id": "NMF_07",
+      "label": "NMF T07",
+      "source": "NMF",
       "top_words": [
         {
           "word": "financial",
@@ -751,8 +763,9 @@
       ]
     },
     {
-      "id": 8,
-      "label": "T08",
+      "id": "NMF_08",
+      "label": "NMF T08",
+      "source": "NMF",
       "top_words": [
         {
           "word": "work",
@@ -844,8 +857,9 @@
       ]
     },
     {
-      "id": 9,
-      "label": "T09",
+      "id": "NMF_09",
+      "label": "NMF T09",
+      "source": "NMF",
       "top_words": [
         {
           "word": "family",
@@ -937,8 +951,9 @@
       ]
     },
     {
-      "id": 10,
-      "label": "T10",
+      "id": "NMF_10",
+      "label": "NMF T10",
+      "source": "NMF",
       "top_words": [
         {
           "word": "economics",
@@ -1030,8 +1045,9 @@
       ]
     },
     {
-      "id": 11,
-      "label": "T11",
+      "id": "NMF_11",
+      "label": "NMF T11",
+      "source": "NMF",
       "top_words": [
         {
           "word": "economy",
@@ -1123,8 +1139,9 @@
       ]
     },
     {
-      "id": 12,
-      "label": "T12",
+      "id": "NMF_12",
+      "label": "NMF T12",
+      "source": "NMF",
       "top_words": [
         {
           "word": "consumption",
@@ -1216,8 +1233,9 @@
       ]
     },
     {
-      "id": 13,
-      "label": "T13",
+      "id": "NMF_13",
+      "label": "NMF T13",
+      "source": "NMF",
       "top_words": [
         {
           "word": "value",
@@ -1309,8 +1327,9 @@
       ]
     },
     {
-      "id": 14,
-      "label": "T14",
+      "id": "NMF_14",
+      "label": "NMF T14",
+      "source": "NMF",
       "top_words": [
         {
           "word": "women",
@@ -1402,8 +1421,9 @@
       ]
     },
     {
-      "id": 15,
-      "label": "T15",
+      "id": "NMF_15",
+      "label": "NMF T15",
+      "source": "NMF",
       "top_words": [
         {
           "word": "child",
@@ -1495,8 +1515,9 @@
       ]
     },
     {
-      "id": 16,
-      "label": "T16",
+      "id": "NMF_16",
+      "label": "NMF T16",
+      "source": "NMF",
       "top_words": [
         {
           "word": "care",
@@ -1588,8 +1609,9 @@
       ]
     },
     {
-      "id": 17,
-      "label": "T17",
+      "id": "NMF_17",
+      "label": "NMF T17",
+      "source": "NMF",
       "top_words": [
         {
           "word": "psychology",
@@ -1681,8 +1703,9 @@
       ]
     },
     {
-      "id": 18,
-      "label": "T18",
+      "id": "NMF_18",
+      "label": "NMF T18",
+      "source": "NMF",
       "top_words": [
         {
           "word": "social",
@@ -1774,8 +1797,9 @@
       ]
     },
     {
-      "id": 19,
-      "label": "T19",
+      "id": "NMF_19",
+      "label": "NMF T19",
+      "source": "NMF",
       "top_words": [
         {
           "word": "debt",
@@ -1867,8 +1891,9 @@
       ]
     },
     {
-      "id": 20,
-      "label": "T20",
+      "id": "NMF_20",
+      "label": "NMF T20",
+      "source": "NMF",
       "top_words": [
         {
           "word": "moral",
@@ -1960,8 +1985,9 @@
       ]
     },
     {
-      "id": 21,
-      "label": "T21",
+      "id": "NMF_21",
+      "label": "NMF T21",
+      "source": "NMF",
       "top_words": [
         {
           "word": "computer",
@@ -2053,8 +2079,9 @@
       ]
     },
     {
-      "id": 22,
-      "label": "T22",
+      "id": "NMF_22",
+      "label": "NMF T22",
+      "source": "NMF",
       "top_words": [
         {
           "word": "childhood",
@@ -2146,8 +2173,9 @@
       ]
     },
     {
-      "id": 23,
-      "label": "T23",
+      "id": "NMF_23",
+      "label": "NMF T23",
+      "source": "NMF",
       "top_words": [
         {
           "word": "sex",
@@ -2239,8 +2267,9 @@
       ]
     },
     {
-      "id": 24,
-      "label": "T24",
+      "id": "NMF_24",
+      "label": "NMF T24",
+      "source": "NMF",
       "top_words": [
         {
           "word": "public",
@@ -2328,6 +2357,1886 @@
         {
           "country": "Alemania",
           "n_docs": 45
+        }
+      ]
+    },
+    {
+      "id": "LDA_06",
+      "label": "LDA T06",
+      "source": "LDA",
+      "top_words": [
+        {
+          "word": "social",
+          "score": 254.3439824573497
+        },
+        {
+          "word": "women",
+          "score": 205.28441307689152
+        },
+        {
+          "word": "inequality",
+          "score": 177.12199291255564
+        },
+        {
+          "word": "health",
+          "score": 174.8463775403773
+        },
+        {
+          "word": "public",
+          "score": 155.20046375749536
+        },
+        {
+          "word": "private",
+          "score": 113.61563366118894
+        },
+        {
+          "word": "urban",
+          "score": 113.16090406893922
+        },
+        {
+          "word": "policies",
+          "score": 92.26303683711689
+        },
+        {
+          "word": "citizenship",
+          "score": 88.11000729186127
+        },
+        {
+          "word": "inequalities",
+          "score": 83.47051369504214
+        },
+        {
+          "word": "state",
+          "score": 79.97018279505575
+        },
+        {
+          "word": "economic",
+          "score": 75.86038851007925
+        },
+        {
+          "word": "city",
+          "score": 71.82097313954598
+        },
+        {
+          "word": "local",
+          "score": 71.1455301003314
+        },
+        {
+          "word": "policy",
+          "score": 64.4803100825254
+        }
+      ],
+      "n_docs_dominant": 220,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 85
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 33
+        },
+        {
+          "country": "Francia",
+          "n_docs": 14
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 13
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 11
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 6
+        }
+      ]
+    },
+    {
+      "id": "LDA_18",
+      "label": "LDA T18",
+      "source": "LDA",
+      "top_words": [
+        {
+          "word": "social",
+          "score": 545.6675498142765
+        },
+        {
+          "word": "practices",
+          "score": 351.25020472031315
+        },
+        {
+          "word": "relational",
+          "score": 207.25002679409047
+        },
+        {
+          "word": "value",
+          "score": 203.2695779711464
+        },
+        {
+          "word": "relations",
+          "score": 200.97130786612493
+        },
+        {
+          "word": "work",
+          "score": 173.12657187229644
+        },
+        {
+          "word": "processes",
+          "score": 169.2701643208344
+        },
+        {
+          "word": "economic",
+          "score": 166.69234983042102
+        },
+        {
+          "word": "everyday",
+          "score": 163.5580135497571
+        },
+        {
+          "word": "identity",
+          "score": 163.24132757431656
+        },
+        {
+          "word": "cultural",
+          "score": 141.04161679953847
+        },
+        {
+          "word": "sociology",
+          "score": 137.92526103214183
+        },
+        {
+          "word": "forms",
+          "score": 119.48833038168543
+        },
+        {
+          "word": "values",
+          "score": 117.96635108005019
+        },
+        {
+          "word": "game",
+          "score": 112.10885067495104
+        }
+      ],
+      "n_docs_dominant": 478,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 163
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 69
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 28
+        },
+        {
+          "country": "Argentina",
+          "n_docs": 23
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 16
+        },
+        {
+          "country": "Italia",
+          "n_docs": 13
+        }
+      ]
+    },
+    {
+      "id": "LDA_19",
+      "label": "LDA T19",
+      "source": "LDA",
+      "top_words": [
+        {
+          "word": "education",
+          "score": 328.801365794342
+        },
+        {
+          "word": "young",
+          "score": 288.11336065514126
+        },
+        {
+          "word": "social",
+          "score": 220.91266169308997
+        },
+        {
+          "word": "people",
+          "score": 180.9974206080843
+        },
+        {
+          "word": "youth",
+          "score": 128.48186871710243
+        },
+        {
+          "word": "policy",
+          "score": 127.00114959678008
+        },
+        {
+          "word": "educational",
+          "score": 104.36414954379477
+        },
+        {
+          "word": "students",
+          "score": 96.5825744470058
+        },
+        {
+          "word": "practice",
+          "score": 83.9425529633058
+        },
+        {
+          "word": "context",
+          "score": 75.37599337362028
+        },
+        {
+          "word": "psychology",
+          "score": 72.9438934603237
+        },
+        {
+          "word": "culture",
+          "score": 72.2788386099608
+        },
+        {
+          "word": "risk",
+          "score": 70.62966415514563
+        },
+        {
+          "word": "schools",
+          "score": 69.76346623548298
+        },
+        {
+          "word": "practices",
+          "score": 61.76093523556658
+        }
+      ],
+      "n_docs_dominant": 211,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 87
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 24
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 14
+        },
+        {
+          "country": "Australia",
+          "n_docs": 12
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 7
+        },
+        {
+          "country": "Rusia",
+          "n_docs": 7
+        }
+      ]
+    },
+    {
+      "id": "LDA_20",
+      "label": "LDA T20",
+      "source": "LDA",
+      "top_words": [
+        {
+          "word": "poverty",
+          "score": 172.21623570051528
+        },
+        {
+          "word": "adoption",
+          "score": 104.63878294511098
+        },
+        {
+          "word": "community",
+          "score": 76.95373625763311
+        },
+        {
+          "word": "food",
+          "score": 64.14047617884113
+        },
+        {
+          "word": "africa",
+          "score": 63.09715695041931
+        },
+        {
+          "word": "business",
+          "score": 58.60734622395398
+        },
+        {
+          "word": "life",
+          "score": 57.919246810768364
+        },
+        {
+          "word": "effects",
+          "score": 51.24349068550856
+        },
+        {
+          "word": "african",
+          "score": 50.269608228560735
+        },
+        {
+          "word": "households",
+          "score": 50.070279166077185
+        },
+        {
+          "word": "rural",
+          "score": 46.165624552194345
+        },
+        {
+          "word": "poor",
+          "score": 45.38017235313633
+        },
+        {
+          "word": "new",
+          "score": 44.34948438162985
+        },
+        {
+          "word": "geography",
+          "score": 42.24968754851255
+        },
+        {
+          "word": "economic",
+          "score": 40.84235807972772
+        }
+      ],
+      "n_docs_dominant": 102,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 32
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 12
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 5
+        },
+        {
+          "country": "Francia",
+          "n_docs": 5
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 5
+        },
+        {
+          "country": "Rusia",
+          "n_docs": 4
+        }
+      ]
+    },
+    {
+      "id": "LDA_21",
+      "label": "LDA T21",
+      "source": "LDA",
+      "top_words": [
+        {
+          "word": "wealth",
+          "score": 131.97168615530347
+        },
+        {
+          "word": "compensation",
+          "score": 114.42307253713847
+        },
+        {
+          "word": "human",
+          "score": 69.20286754506807
+        },
+        {
+          "word": "moral",
+          "score": 62.27895749780205
+        },
+        {
+          "word": "employees",
+          "score": 61.70912940898854
+        },
+        {
+          "word": "benefits",
+          "score": 42.268323352303625
+        },
+        {
+          "word": "long",
+          "score": 39.84349461856616
+        },
+        {
+          "word": "caring",
+          "score": 38.71308514984575
+        },
+        {
+          "word": "national",
+          "score": 38.177465857724734
+        },
+        {
+          "word": "financial",
+          "score": 37.04906130839985
+        },
+        {
+          "word": "job",
+          "score": 34.241058997904396
+        },
+        {
+          "word": "investment",
+          "score": 34.03396776533899
+        },
+        {
+          "word": "public",
+          "score": 33.12545936659033
+        },
+        {
+          "word": "costs",
+          "score": 30.78122026317933
+        },
+        {
+          "word": "investments",
+          "score": 30.66922344037181
+        }
+      ],
+      "n_docs_dominant": 50,
+      "top_countries": [
+        {
+          "country": "Reino Unido",
+          "n_docs": 10
+        },
+        {
+          "country": "Estados Unidos",
+          "n_docs": 7
+        },
+        {
+          "country": "Francia",
+          "n_docs": 5
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 4
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 2
+        },
+        {
+          "country": "Países Bajos",
+          "n_docs": 2
+        }
+      ]
+    },
+    {
+      "id": "BERT_00",
+      "label": "BERT T00",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "marketization",
+          "score": 0.07538474301414928
+        },
+        {
+          "word": "coordination",
+          "score": 0.04249297797354129
+        },
+        {
+          "word": "incentives",
+          "score": 0.036343946257354556
+        },
+        {
+          "word": "performativity",
+          "score": 0.03410941997560352
+        },
+        {
+          "word": "producers",
+          "score": 0.02956033250333307
+        },
+        {
+          "word": "embedding",
+          "score": 0.028616670811599524
+        },
+        {
+          "word": "neoclassical",
+          "score": 0.027585668170077054
+        },
+        {
+          "word": "illegal",
+          "score": 0.025477815972372836
+        },
+        {
+          "word": "audience",
+          "score": 0.02447770558663553
+        },
+        {
+          "word": "firm",
+          "score": 0.023542856033228157
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "transaction",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "trading",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 340,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 138
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 37
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 30
+        },
+        {
+          "country": "Francia",
+          "n_docs": 27
+        },
+        {
+          "country": "Rusia",
+          "n_docs": 12
+        },
+        {
+          "country": "Países Bajos",
+          "n_docs": 10
+        }
+      ]
+    },
+    {
+      "id": "BERT_04",
+      "label": "BERT T04",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "neoclassical",
+          "score": 0.042253961669508525
+        },
+        {
+          "word": "explanatory",
+          "score": 0.034748778206938974
+        },
+        {
+          "word": "intellectual",
+          "score": 0.029273466988451017
+        },
+        {
+          "word": "weber",
+          "score": 0.028331268387909815
+        },
+        {
+          "word": "discrimination",
+          "score": 0.027346461012278916
+        },
+        {
+          "word": "brief",
+          "score": 0.026480723146299005
+        },
+        {
+          "word": "quantification",
+          "score": 0.026197332574101822
+        },
+        {
+          "word": "neoliberalism",
+          "score": 0.025831838812353694
+        },
+        {
+          "word": "cognition",
+          "score": 0.02568387954425924
+        },
+        {
+          "word": "rule",
+          "score": 0.024173063100479286
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 520,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 222
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 48
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 39
+        },
+        {
+          "country": "Francia",
+          "n_docs": 29
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 19
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 17
+        }
+      ]
+    },
+    {
+      "id": "BERT_05",
+      "label": "BERT T05",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "corruption",
+          "score": 0.11494113928576112
+        },
+        {
+          "word": "genetic",
+          "score": 0.04939151680733437
+        },
+        {
+          "word": "disaster",
+          "score": 0.04786699214867045
+        },
+        {
+          "word": "discrimination",
+          "score": 0.03118007704203764
+        },
+        {
+          "word": "customers",
+          "score": 0.03076079182976626
+        },
+        {
+          "word": "sales",
+          "score": 0.030671586439879914
+        },
+        {
+          "word": "buying",
+          "score": 0.027810077103800207
+        },
+        {
+          "word": "death",
+          "score": 0.02747512006630275
+        },
+        {
+          "word": "stress",
+          "score": 0.025381304596717
+        },
+        {
+          "word": "affecting",
+          "score": 0.022893060594411024
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "tourism",
+          "score": 0.0
+        },
+        {
+          "word": "transaction",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 216,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 74
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 17
+        },
+        {
+          "country": "Francia",
+          "n_docs": 14
+        },
+        {
+          "country": "Australia",
+          "n_docs": 12
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 9
+        },
+        {
+          "country": "Países Bajos",
+          "n_docs": 8
+        }
+      ]
+    },
+    {
+      "id": "BERT_06",
+      "label": "BERT T06",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "migrants",
+          "score": 0.10575054287713773
+        },
+        {
+          "word": "african",
+          "score": 0.07314547065368499
+        },
+        {
+          "word": "mobile",
+          "score": 0.0428813897442988
+        },
+        {
+          "word": "migrant",
+          "score": 0.03931822407409595
+        },
+        {
+          "word": "land",
+          "score": 0.03410800837754352
+        },
+        {
+          "word": "border",
+          "score": 0.032935364402070545
+        },
+        {
+          "word": "savings",
+          "score": 0.02920943228237134
+        },
+        {
+          "word": "sub",
+          "score": 0.02656548987414257
+        },
+        {
+          "word": "entrepreneurship",
+          "score": 0.026388547534953108
+        },
+        {
+          "word": "immigrants",
+          "score": 0.02214271075170165
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "violence",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 192,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 51
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 26
+        },
+        {
+          "country": "Australia",
+          "n_docs": 14
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 10
+        },
+        {
+          "country": "Francia",
+          "n_docs": 8
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 8
+        }
+      ]
+    },
+    {
+      "id": "BERT_07",
+      "label": "BERT T07",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "web",
+          "score": 0.6735647046960991
+        },
+        {
+          "word": "abuse",
+          "score": 0.3806630580853725
+        },
+        {
+          "word": "criminology",
+          "score": 0.33678235234804954
+        },
+        {
+          "word": "typography",
+          "score": 0.25505111013282045
+        },
+        {
+          "word": "blood",
+          "score": 0.24575295544069864
+        },
+        {
+          "word": "legitimation",
+          "score": 0.21142543057367727
+        },
+        {
+          "word": "harm",
+          "score": 0.20279283142506832
+        },
+        {
+          "word": "advertising",
+          "score": 0.18360370564712944
+        },
+        {
+          "word": "water",
+          "score": 0.1464757672532808
+        },
+        {
+          "word": "names",
+          "score": 0.13158593821700404
+        },
+        {
+          "word": "transaction",
+          "score": 0.0
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "trading",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 58,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 21
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 18
+        },
+        {
+          "country": "Singapur",
+          "n_docs": 15
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 2
+        },
+        {
+          "country": "España",
+          "n_docs": 1
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 0
+        }
+      ]
+    },
+    {
+      "id": "BERT_08",
+      "label": "BERT T08",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "simmel",
+          "score": 0.03559634835061635
+        },
+        {
+          "word": "game",
+          "score": 0.03223953994021139
+        },
+        {
+          "word": "games",
+          "score": 0.023416507481877465
+        },
+        {
+          "word": "medium",
+          "score": 0.023278664123640457
+        },
+        {
+          "word": "materialism",
+          "score": 0.022605532895824534
+        },
+        {
+          "word": "players",
+          "score": 0.022041362071491023
+        },
+        {
+          "word": "ancient",
+          "score": 0.02159728233564651
+        },
+        {
+          "word": "anxiety",
+          "score": 0.019381985215532777
+        },
+        {
+          "word": "republic",
+          "score": 0.019133758031509945
+        },
+        {
+          "word": "diffusion",
+          "score": 0.018563721964148894
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "tourism",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 444,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 146
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 62
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 27
+        },
+        {
+          "country": "Francia",
+          "n_docs": 27
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 18
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 16
+        }
+      ]
+    },
+    {
+      "id": "BERT_09",
+      "label": "BERT T09",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "latin",
+          "score": 0.07561574104788688
+        },
+        {
+          "word": "reflexivity",
+          "score": 0.04989621985204721
+        },
+        {
+          "word": "girls",
+          "score": 0.04211697059365221
+        },
+        {
+          "word": "decade",
+          "score": 0.04071616825655447
+        },
+        {
+          "word": "judicial",
+          "score": 0.03720925086969403
+        },
+        {
+          "word": "additionally",
+          "score": 0.03466260320732496
+        },
+        {
+          "word": "farmers",
+          "score": 0.0345381800246959
+        },
+        {
+          "word": "beneficiaries",
+          "score": 0.03203302538743227
+        },
+        {
+          "word": "indigenous",
+          "score": 0.03006354643747562
+        },
+        {
+          "word": "blood",
+          "score": 0.027485527911130767
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "tourism",
+          "score": 0.0
+        },
+        {
+          "word": "transaction",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 121,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 41
+        },
+        {
+          "country": "Argentina",
+          "n_docs": 20
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 13
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 7
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 3
+        },
+        {
+          "country": "España",
+          "n_docs": 3
+        }
+      ]
+    },
+    {
+      "id": "BERT_13",
+      "label": "BERT T13",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "energy",
+          "score": 0.14642225669648407
+        },
+        {
+          "word": "sustainability",
+          "score": 0.06021690720231484
+        },
+        {
+          "word": "climate",
+          "score": 0.038985703854567844
+        },
+        {
+          "word": "reporting",
+          "score": 0.03545481943035772
+        },
+        {
+          "word": "resilience",
+          "score": 0.031738605900454506
+        },
+        {
+          "word": "victims",
+          "score": 0.027046070876426898
+        },
+        {
+          "word": "sustainable",
+          "score": 0.02604220959398997
+        },
+        {
+          "word": "harm",
+          "score": 0.02550538693632179
+        },
+        {
+          "word": "flexibility",
+          "score": 0.023849455765342843
+        },
+        {
+          "word": "asset",
+          "score": 0.023496184518554973
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "team",
+          "score": 0.0
+        },
+        {
+          "word": "tourism",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 212,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 69
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 29
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 19
+        },
+        {
+          "country": "Francia",
+          "n_docs": 16
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 10
+        },
+        {
+          "country": "Países Bajos",
+          "n_docs": 9
+        }
+      ]
+    },
+    {
+      "id": "BERT_14",
+      "label": "BERT T14",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "drug",
+          "score": 0.07285606053552393
+        },
+        {
+          "word": "austerity",
+          "score": 0.06364837221630419
+        },
+        {
+          "word": "pandemic",
+          "score": 0.05025842029851432
+        },
+        {
+          "word": "anxieties",
+          "score": 0.04585788755832562
+        },
+        {
+          "word": "modeling",
+          "score": 0.03821490629860468
+        },
+        {
+          "word": "court",
+          "score": 0.037268353357049144
+        },
+        {
+          "word": "charitable",
+          "score": 0.03469152324671788
+        },
+        {
+          "word": "disadvantaged",
+          "score": 0.033131939465121385
+        },
+        {
+          "word": "neighborhood",
+          "score": 0.029903389852544215
+        },
+        {
+          "word": "charity",
+          "score": 0.029592914329978015
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "transaction",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "trading",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 111,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 38
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 17
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 13
+        },
+        {
+          "country": "Francia",
+          "n_docs": 8
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 5
+        },
+        {
+          "country": "Argentina",
+          "n_docs": 3
+        }
+      ]
+    },
+    {
+      "id": "BERT_15",
+      "label": "BERT T15",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "fertility",
+          "score": 0.1958071608892768
+        },
+        {
+          "word": "reproductive",
+          "score": 0.12749841650217897
+        },
+        {
+          "word": "assisted",
+          "score": 0.06126012590493356
+        },
+        {
+          "word": "humans",
+          "score": 0.059822988390656424
+        },
+        {
+          "word": "altruism",
+          "score": 0.0568420387348055
+        },
+        {
+          "word": "asks",
+          "score": 0.053175989680583485
+        },
+        {
+          "word": "team",
+          "score": 0.04955943409489541
+        },
+        {
+          "word": "mothers",
+          "score": 0.03843175577135976
+        },
+        {
+          "word": "intentions",
+          "score": 0.037734435678373965
+        },
+        {
+          "word": "race",
+          "score": 0.03404667424290814
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "victims",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 158,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 51
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 27
+        },
+        {
+          "country": "Italia",
+          "n_docs": 10
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 9
+        },
+        {
+          "country": "Francia",
+          "n_docs": 5
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 5
+        }
+      ]
+    },
+    {
+      "id": "BERT_16",
+      "label": "BERT T16",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "mobile",
+          "score": 0.1272200706071569
+        },
+        {
+          "word": "payments",
+          "score": 0.08792074219577373
+        },
+        {
+          "word": "complementary",
+          "score": 0.057602540859957155
+        },
+        {
+          "word": "infrastructure",
+          "score": 0.05505776926422659
+        },
+        {
+          "word": "transaction",
+          "score": 0.05303206966347371
+        },
+        {
+          "word": "electronic",
+          "score": 0.03592947893332129
+        },
+        {
+          "word": "architecture",
+          "score": 0.03588640543670508
+        },
+        {
+          "word": "banks",
+          "score": 0.03535471310898247
+        },
+        {
+          "word": "investing",
+          "score": 0.03510913693913197
+        },
+        {
+          "word": "code",
+          "score": 0.03393628240509714
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "trading",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 202,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 48
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 38
+        },
+        {
+          "country": "Australia",
+          "n_docs": 15
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 9
+        },
+        {
+          "country": "Francia",
+          "n_docs": 9
+        },
+        {
+          "country": "Italia",
+          "n_docs": 7
+        }
+      ]
+    },
+    {
+      "id": "BERT_18",
+      "label": "BERT T18",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "trading",
+          "score": 0.06254945638976206
+        },
+        {
+          "word": "climate",
+          "score": 0.046696918397944646
+        },
+        {
+          "word": "medium",
+          "score": 0.030624058549566274
+        },
+        {
+          "word": "drug",
+          "score": 0.026950617257857974
+        },
+        {
+          "word": "transaction",
+          "score": 0.026388414329871688
+        },
+        {
+          "word": "frames",
+          "score": 0.02601817764106722
+        },
+        {
+          "word": "faith",
+          "score": 0.02536797350007559
+        },
+        {
+          "word": "sales",
+          "score": 0.024235501441645626
+        },
+        {
+          "word": "quantification",
+          "score": 0.023897029982280767
+        },
+        {
+          "word": "constrain",
+          "score": 0.022985535378381546
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "victims",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        },
+        {
+          "word": "tax",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 297,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 153
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 32
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 17
+        },
+        {
+          "country": "Francia",
+          "n_docs": 15
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 11
+        },
+        {
+          "country": "Australia",
+          "n_docs": 10
+        }
+      ]
+    },
+    {
+      "id": "BERT_21",
+      "label": "BERT T21",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "singapore",
+          "score": 0.06117169896680029
+        },
+        {
+          "word": "marriage",
+          "score": 0.058787233383220866
+        },
+        {
+          "word": "penetration",
+          "score": 0.04984080991123439
+        },
+        {
+          "word": "quot",
+          "score": 0.045008118488695875
+        },
+        {
+          "word": "ethnic",
+          "score": 0.03933071044739739
+        },
+        {
+          "word": "migrant",
+          "score": 0.03927960612221595
+        },
+        {
+          "word": "immigrant",
+          "score": 0.034719379259987714
+        },
+        {
+          "word": "intergenerational",
+          "score": 0.03154265586934592
+        },
+        {
+          "word": "older",
+          "score": 0.029872474715582808
+        },
+        {
+          "word": "disadvantaged",
+          "score": 0.029539319523120267
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "violence",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 151,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 55
+        },
+        {
+          "country": "China",
+          "n_docs": 27
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 12
+        },
+        {
+          "country": "Singapur",
+          "n_docs": 10
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 5
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 3
+        }
+      ]
+    },
+    {
+      "id": "BERT_22",
+      "label": "BERT T22",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "lifestyle",
+          "score": 0.048825121359114355
+        },
+        {
+          "word": "artistic",
+          "score": 0.039821859752534494
+        },
+        {
+          "word": "arts",
+          "score": 0.038992628589243544
+        },
+        {
+          "word": "aesthetics",
+          "score": 0.03540152058173285
+        },
+        {
+          "word": "tax",
+          "score": 0.035025671571018366
+        },
+        {
+          "word": "employee",
+          "score": 0.03381742786784803
+        },
+        {
+          "word": "consumerism",
+          "score": 0.03338322595864714
+        },
+        {
+          "word": "creativity",
+          "score": 0.030815433687170764
+        },
+        {
+          "word": "platforms",
+          "score": 0.029053057203633003
+        },
+        {
+          "word": "motivation",
+          "score": 0.0278422436098907
+        },
+        {
+          "word": "true",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "transaction",
+          "score": 0.0
+        },
+        {
+          "word": "team",
+          "score": 0.0
+        },
+        {
+          "word": "teachers",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 234,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 82
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 25
+        },
+        {
+          "country": "Suecia",
+          "n_docs": 16
+        },
+        {
+          "country": "Francia",
+          "n_docs": 14
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 12
+        },
+        {
+          "country": "Países Bajos",
+          "n_docs": 12
+        }
+      ]
+    },
+    {
+      "id": "BERT_23",
+      "label": "BERT T23",
+      "source": "BERT",
+      "top_words": [
+        {
+          "word": "democracy",
+          "score": 0.05305650691504442
+        },
+        {
+          "word": "prevention",
+          "score": 0.0334059487983613
+        },
+        {
+          "word": "agriculture",
+          "score": 0.031448889814867396
+        },
+        {
+          "word": "farmers",
+          "score": 0.027651334496822007
+        },
+        {
+          "word": "mother",
+          "score": 0.026944481138761158
+        },
+        {
+          "word": "bibliography",
+          "score": 0.02471642957582814
+        },
+        {
+          "word": "orders",
+          "score": 0.02324432412977213
+        },
+        {
+          "word": "true",
+          "score": 0.022693566430455638
+        },
+        {
+          "word": "machine",
+          "score": 0.020692594071185795
+        },
+        {
+          "word": "net",
+          "score": 0.02037055773435531
+        },
+        {
+          "word": "typography",
+          "score": 0.0
+        },
+        {
+          "word": "victims",
+          "score": 0.0
+        },
+        {
+          "word": "unpaid",
+          "score": 0.0
+        },
+        {
+          "word": "transaction",
+          "score": 0.0
+        },
+        {
+          "word": "trading",
+          "score": 0.0
+        }
+      ],
+      "n_docs_dominant": 380,
+      "top_countries": [
+        {
+          "country": "Estados Unidos",
+          "n_docs": 124
+        },
+        {
+          "country": "Francia",
+          "n_docs": 32
+        },
+        {
+          "country": "Reino Unido",
+          "n_docs": 25
+        },
+        {
+          "country": "Alemania",
+          "n_docs": 25
+        },
+        {
+          "country": "Canadá",
+          "n_docs": 20
+        },
+        {
+          "country": "Brasil",
+          "n_docs": 20
         }
       ]
     }

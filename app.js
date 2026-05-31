@@ -61,9 +61,12 @@ function render() {
     savedHtml = `<span class="saved-indicator saved-no">⚠ Sin decidir</span>`;
   }
 
+  const sourceBadge = t.source
+    ? `<span class="source-badge source-${t.source.toLowerCase()}">${t.source}</span>`
+    : "";
   document.getElementById("topic-card").innerHTML = `
     <div class="card-header">
-      <h2>${t.label} ${savedHtml}</h2>
+      <h2>${t.label} ${sourceBadge} ${savedHtml}</h2>
       <div class="stats">${t.n_docs_dominant} docs con este tópico dominante</div>
     </div>
 
@@ -254,6 +257,7 @@ function exportJson() {
     labels: DATA.topics.map(t => ({
       id: t.id,
       label: t.label,
+      source: t.source || "",
       top_words: t.top_words.slice(0, 5).map(w => w.word),
       name: labels[t.id]?.name || "",
       notes: labels[t.id]?.notes || "",
@@ -338,8 +342,12 @@ async function init() {
       "<p style='color:red'>Error cargando topics_data.json: " + e.message + "</p>";
     return;
   }
+  const total = DATA.n_topics_total || DATA.k || DATA.topics.length;
+  const breakdown = (DATA.n_nmf !== undefined)
+    ? ` (${DATA.n_nmf} NMF + ${DATA.n_lda_inedito} LDA inéditos + ${DATA.n_bert_inedito} BERT inéditos)`
+    : "";
   document.getElementById("meta").textContent =
-    `Modelo: ${DATA.model} · K=${DATA.k} tópicos · ${DATA.n_docs_total.toLocaleString()} documentos · ${DATA.subset}`;
+    `${total} tópicos${breakdown} · ${DATA.n_docs_total.toLocaleString()} documentos · ${DATA.subset || DATA.model}`;
 
   document.getElementById("btn-prev").addEventListener("click", () => {
     if (current > 0) { current--; render(); }

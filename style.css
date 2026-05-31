@@ -152,6 +152,20 @@ main#topic-card {
 
 .saved-discarded { background: #e5e7eb; color: #475569; }
 
+.source-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+.source-nmf  { background: #dbeafe; color: #1e40af; }
+.source-lda  { background: #dcfce7; color: #166534; }
+.source-bert { background: #ede9fe; color: #5b21b6; }
+
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
   20%, 60% { transform: translateX(-8px); }
